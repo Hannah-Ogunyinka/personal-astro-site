@@ -1,0 +1,293 @@
+---
+import logo from "../images/My image circle.png";
+import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
+---
+
+<header>
+  <div class="nav-outer-container">
+    <div class="flex nav-container">
+      <a class="logo-wrapper flex" href="index.html">
+        <img class="logo" src={logo} />
+        <div class="logo-text">create . code . connect</div>
+      </a>
+      <nav aria-label="main navigation">
+        <ul role="menubar" class="flex">
+          <li role="none">
+            <a role="menuitem" class="nav-item__link" href="/"
+              >01. <span class="nav-item-text">Home</span></a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" class="nav-item__link" href="/projects"
+              >02. <span class="nav-item-text">Projects</span></a
+            >
+          </li>
+          <li role="none">
+            <a role="menuitem" class="nav-item__link" href="/posts"
+              >03. <span class="nav-item-text">Posts</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mobile-menu-section">
+      <div class="mobile-icon-wrapper">
+        <img
+          src={mobileMenuIcon}
+          alt="Mobile-icon"
+          class="mobile-icon"
+          onclick="openNav()"
+          style="cursor: pointer"
+        />
+      </div>
+
+      <div id="myNav" class="mobile-menu">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+
+        <div class="mobile-menu-content">
+          <a href="/">01: Home</a>
+          <a href="/projects">02: Projects</a>
+          <a href="/posts">03: Posts</a>
+          <btn href="" class="mobile-menu-cta-btn" aria-controls="email-link"
+            ><span class="sr-only mobile-menu-cta-text" aria-expanded="false"
+              >Let's work together!</span
+            ></btn
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+  }
+
+  .nav-outer-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-outer-container.scrolled {
+    background-color: rgba(23, 28, 31, 0.7);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-container {
+    justify-content: space-between;
+    padding-block: 1.5rem 1rem;
+    padding-inline: 4rem;
+  }
+
+  .logo {
+    width: 50px;
+    border: solid 2px var(--accent-color);
+    border-radius: 100px;
+  }
+
+  .logo-wrapper {
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .logo-wrapper:hover > .logo-text {
+    transform: translate(70px, 0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay: 0.1s;
+  }
+
+  .logo-text {
+    white-space: nowrap;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-family: var(--ff-sans-normal);
+    font-weight: var(--fw-sub-heading);
+    font-size: 1.2rem;
+    letter-spacing: normal;
+    transform: translate(0, 0);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    position: absolute;
+    z-index: -1;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  nav ul li {
+    text-transform: uppercase;
+    font-weight: var(--fw-heading);
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-item-text {
+    color: var(--secondary-color);
+  }
+
+  nav ul li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 12px; /*changes the thickness of the underline*/
+    left: 0px;
+    bottom: -17px;
+    background-color: var(--accent-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: 0.25s linear;
+  }
+
+  nav ul li a:hover:before,
+  nav ul li a:focus:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+  [aria-current="page"] {
+    text-decoration: underline var(--accent-color) 12px;
+    text-underline-offset: 10px;
+  }
+
+  /*----------------------------- Header media queries-------------------- */
+
+  @media (max-width: 1023px) {
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .nav-container {
+      display: none;
+    }
+
+    .nav-outer-container {
+      position: static;
+      width: 100%;
+    }
+
+    .mobile-menu-section {
+      position: relative;
+      width: 100%;
+      height: 76px;
+    }
+
+    .mobile-icon-wrapper {
+      position: absolute;
+      right: 2.5rem;
+    }
+  }
+
+  /* ---------------------------------Mobile Menu--------------------------------------- */
+  /* ----------------------------------------------------------------------------------- */
+
+  /*----------------------------- Mobile menu icon-------------------- */
+  .mobile-icon {
+    padding-block: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-icon {
+      display: none;
+    }
+  }
+
+  /*----------------------------- Mobile menu-------------------- */
+  .mobile-menu {
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 15; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: var(--accent-color);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.3s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+
+  /* Position the content inside the mobile menu */
+  .mobile-menu-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+  }
+
+  /* The navigation links inside the mobile menu */
+  .mobile-menu a {
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    font-size: var(--fs-9);
+    text-transform: uppercase;
+    font-weight: var(--fw-500);
+    color: var(--primary-color);
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+
+  /* Position the close button (top right corner) */
+  .mobile-menu .closebtn {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 60px;
+    color: var(--primary-color);
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .mobile-menu a:hover,
+  .mobile-menu a:focus,
+  .mobile-menu .closebtn:hover,
+  .mobile-menu .closebtn:focus {
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+
+  .mobile-menu-cta-btn {
+    display: inline-block;
+    cursor: pointer;
+    margin: 1rem 2.5rem;
+    border: solid 4px var(--primary-color);
+    transition: 0.2s;
+    padding: 1em 1.5em;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-cta-btn:hover,
+  .mobile-menu-cta-btn:focus {
+    border-radius: 2rem;
+    background-color: var(--primary-color);
+  }
+
+  .mobile-menu-cta-text {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: var(--fw-sub-heading);
+  }
+
+  .mobile-menu-cta-btn:hover > .mobile-menu-cta-text {
+    color: var(--accent-color);
+  }
+</style>

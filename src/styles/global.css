@@ -1,0 +1,175 @@
+/* ----------Addtional reset----------- */
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture,
+body {
+  margin: 0;
+}
+
+/* reset ul */
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* ----Custom properties ---- */
+:root {
+  position: relative;
+  min-height: 100%;
+
+  /* Colors */
+  --primary-color: #22292d;
+  --accent-color: #e97b2c;
+  --secondary-color: #ffffff;
+
+  /* font-sizes */
+  font-size: 16px;
+  /* for main heading to scale */
+  --fs-9: clamp(2.25rem, 1.5455rem + 3.5227vw, 10rem);
+
+  /* for sub-heading to scale */
+  --fs-8: clamp(2.3rem, 8vw, 10rem);
+
+  /* hm-pg intro section */
+  --fs-7: clamp(1.8rem, 1.1455rem + 3.2727vw, 9rem);
+
+  /* body */
+  --fs-6: 1.125rem;
+
+  /* */
+  --fs-5: clamp(0.8rem, 4vw, 1.125rem);
+
+  /*  */
+  --fs-4: 1.125rem;
+
+  /* --fs-3:  */
+
+  /* font-families */
+  --ff-sans-normal: "Inter", sans-serif;
+  --ff-mono: "Source Code Pro", monospace;
+
+  /* font-weights */
+  --fw-hero-heading: 900;
+  --fw-800: 800;
+  --fw-heading: 700;
+  --fw-sub-heading: 600;
+  --fw-500: 500;
+  --fw-body-text: 400;
+  --fw-300: 300;
+}
+
+@media (max-width: 400px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+/* ------------------- */
+/* Utility classes */
+/* ------------------- */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* ----------------------------Global Styles---------------------------- */
+/* ------------------------------------------------------------------- */
+
+.standard-container {
+  padding-inline: 4rem;
+  margin-inline: auto;
+  max-width: 1920px;
+}
+
+.top-bottom-padding {
+  padding-block: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .standard-container {
+    padding-inline: 2.5rem;
+  }
+
+  .top-bottom-padding {
+    padding-block: 2.5rem;
+  }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--primary-color);
+  font-size: var(--fs-4);
+  font-family: var(--ff-sans-normal);
+  font-weight: var(--fw-body-text);
+  max-width: 3840px;
+}
+
+h1 {
+  font-size: var(--fs-9);
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+h2 {
+  font-size: var(--fs-8);
+  letter-spacing: 0.04rem;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  font-weight: var(--fw-heading);
+}
+
+h3 {
+  font-size: clamp(2rem, 3.5vw, 5rem);
+  font-weight: var(--fw-heading);
+  line-height: normal;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 60ch;
+}
+
+p {
+  font-weight: var(--fw-body-text);
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.preheading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fw-sub-heading);
+  display: block;
+  text-transform: uppercase;
+}
