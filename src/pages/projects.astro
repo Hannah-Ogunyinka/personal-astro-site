@@ -1,2 +1,24 @@
 ---
+const pageTitle = "Hannah Ogunyinka";
+import Header from "../components/header.astro";
+import "../styles/global.css";
 ---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/My image circle.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+  </body>
+</html>
