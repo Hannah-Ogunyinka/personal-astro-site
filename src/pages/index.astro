@@ -1,6 +1,12 @@
 ---
 import Header from "../components/header.astro";
 import "../styles/global.css";
+import circleMobile from "../images/circle-mobile.svg";
+import circleDesktop from "../images/circle-image__desktop.svg";
+import studioPortrait1440 from "../images/Extended up studio portrait hair fix-1440.jpg";
+import studioPortrait960 from "../images/Extended up studio portrait hair fix-960.jpg";
+import pepImage from "../images/DSCF1530.jpg";
+import tayosImage from "../images/DSCF1530.jpg";
 const pageTitle = "Hannah Ogunyinka";
 ---
 
@@ -17,7 +23,6 @@ const pageTitle = "Hannah Ogunyinka";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
-    <script defer src="nav.js"></script>
   </head>
   <body>
     <Header />
@@ -31,13 +36,10 @@ const pageTitle = "Hannah Ogunyinka";
               <picture>
                 <source
                   media="(max-width:768px)"
-                  srcset="/assets/circle-mobile.svg"
+                  srcset={circleMobile}
                   alt="full stop punctuation"
                 />
-                <img
-                  src="/assets/circle-image__desktop.svg"
-                  alt="full stop punctuation"
-                />
+                <img src={circleDesktop} alt="full stop punctuation" />
               </picture>
             </div>
             <a href="" class="hero-cta-btn" aria-controls="email-link"
@@ -51,12 +53,12 @@ const pageTitle = "Hannah Ogunyinka";
           <picture>
             <source
               media="(max-width:960px)"
-              srcset="/assets/Extended up studio portrait hair fix-960.jpg"
+              srcset={studioPortrait960}
               alt="hero image"
               class="hm-pg-hero-image"
             />
             <img
-              src="/assets/Extended up studio portrait hair fix-1440.jpg"
+              src={studioPortrait1440}
               alt="hero image"
               class="hm-pg-hero-image"
             />
@@ -82,19 +84,16 @@ const pageTitle = "Hannah Ogunyinka";
           <picture>
             <source
               media="(max-width:768px)"
-              srcset="/assets/circle-mobile.svg"
+              srcset={circleMobile}
               alt="full stop punctuation"
             />
-            <img
-              src="/assets/circle-image__desktop.svg"
-              alt="full stop punctuation"
-            />
+            <img src={circleDesktop} alt="full stop punctuation" />
           </picture>
         </div>
         <div class="hm-pg-projects-case-study-container flex">
           <div class="hm-pg-projects-case-study-img-container">
             <img
-              src="assets/IMG_1939.JPG"
+              src={pepImage}
               alt="PEP PEP-case-study-img"
               class="PEP-case-study-img"
             />
@@ -124,7 +123,7 @@ const pageTitle = "Hannah Ogunyinka";
         <div class="hm-pg-projects-case-study-container flex">
           <div class="hm-pg-projects-case-study-img-container">
             <img
-              src="assets/DSCF1530.jpg"
+              src={tayosImage}
               alt="PEP PEP-case-study-img-2"
               class="PEP-case-study-img-2"
             />
@@ -170,13 +169,10 @@ const pageTitle = "Hannah Ogunyinka";
           <picture>
             <source
               media="(max-width:768px)"
-              srcset="/assets/circle-mobile.svg"
+              srcset={circleMobile}
               alt="full stop punctuation"
             />
-            <img
-              src="/assets/circle-image__desktop.svg"
-              alt="full stop punctuation"
-            />
+            <img src={circleDesktop} alt="full stop punctuation" />
           </picture>
         </div>
         <div class="hm-pg-posts-container flex">
