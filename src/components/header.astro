@@ -59,7 +59,7 @@ import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
   </div>
 </header>
 
-<style>
+<style is:inline>
   header {
     position: fixed;
     right: 0;
@@ -292,7 +292,7 @@ import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
   }
 </style>
 
-<script>
+<script is:inline>
   /* Set styling on current (active) nav link */
   document.querySelectorAll(".nav-item__link").forEach((link) => {
     if (link.href === window.location.href) {
