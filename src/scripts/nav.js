@@ -4,7 +4,7 @@ document.querySelectorAll(".nav-item__link").forEach((link) => {
     link.setAttribute("aria-current", "page");
   }
 });
-
+/*------------------when mobile-menu-icon clicked, myNav width changes-----------------------*/
 document.addEventListener("DOMContentLoaded", function () {
   const openNavBtn = document.getElementById("openNavBtn");
   const closeNavBtn = document.getElementById("closeNavBtn");
@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-/*---------------------Scroll down and header becomes dark-grey------------------ */
+/*---------------------Scroll down - header becomes dark-grey and logo appears------------------ */
 // Get a reference to the nav-container
 const outernavContainer = document.querySelector(".nav-outer-container");
+const logo = document.querySelector(".logo");
 
 // Listen for scroll events
 window.addEventListener("scroll", () => {
@@ -29,8 +30,10 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     // Add the 'scrolled' class to apply the dark background
     outernavContainer.classList.add("scrolled");
+    logo.classList.add("scrolled");
   } else {
     // Remove the 'scrolled' class to make the background transparent
     outernavContainer.classList.remove("scrolled");
+    logo.classList.remove("scrolled");
   }
 });

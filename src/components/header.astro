@@ -94,6 +94,13 @@ import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
     width: 50px;
     border: solid 2px var(--accent-color);
     border-radius: 100px;
+    opacity: 0;
+  }
+
+  .logo.scrolled {
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay: 0.1s;
   }
 
   .logo-wrapper {
