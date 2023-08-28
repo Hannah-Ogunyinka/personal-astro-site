@@ -37,18 +37,11 @@ import postImage2 from "../assets/images/posts img 2.jpg";
           </div>
         </div>
         <div class="hm-pg-hero-image-section">
-          <picture>
-            <source
-              media="(max-width:960px)"
-              srcset={studioPortrait960.src}
-              class="hm-pg-hero-image"
-            />
-            <img
-              src={studioPortrait1440.src}
-              alt="hero image"
-              class="hm-pg-hero-image"
-            />
-          </picture>
+          <Image
+            src={studioPortrait1440}
+            alt="hero image"
+            class="hm-pg-hero-image"
+          />
         </div>
       </div>
     </section>

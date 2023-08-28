@@ -1,14 +1,14 @@
 ---
+import { Image } from "astro:assets";
 import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
 import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
-import { Image } from "astro:assets";
 ---
 
 <header>
   <div class="nav-outer-container">
     <div class="flex nav-container">
       <a class="logo-wrapper flex" href="index.html">
-        <img class="logo" src={logo.src} />
+        <Image class="logo" src={logo} alt="logo" />
         <div class="logo-text">create . code . connect</div>
       </a>
       <nav aria-label="main navigation">
@@ -96,6 +96,7 @@ import { Image } from "astro:assets";
 
   .logo {
     width: 50px;
+    height: 50px;
     outline: solid 2px var(--accent-color);
     outline-offset: -2px;
     opacity: 0;
@@ -216,6 +217,8 @@ import { Image } from "astro:assets";
   /*----------------------------- Mobile menu icon-------------------- */
   .mobile-icon {
     padding-block: 2rem;
+    width: 38px;
+    height: 84px;
   }
 
   @media (min-width: 1024px) {
