@@ -1,13 +1,13 @@
 ---
-import logo from "../images/Hannah Ogunyinka favicon 2.svg";
-import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
+import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
+import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
 ---
 
 <header>
   <div class="nav-outer-container">
     <div class="flex nav-container">
       <a class="logo-wrapper flex" href="index.html">
-        <img class="logo" src={logo} />
+        <img class="logo" src={logo.src} />
         <div class="logo-text">create . code . connect</div>
       </a>
       <nav aria-label="main navigation">
@@ -33,7 +33,7 @@ import mobileMenuIcon from "../images/Mobile-menu-icon.svg";
     <div class="mobile-menu-section">
       <div class="mobile-icon-wrapper">
         <img
-          src={mobileMenuIcon}
+          src={mobileMenuIcon.src}
           alt="Mobile-icon"
           class="mobile-icon"
           id="openNavBtn"

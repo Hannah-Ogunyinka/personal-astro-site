@@ -3,14 +3,15 @@ import "../styles/global.css";
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
-import circleMobile from "../images/circle-mobile.svg";
-import circleDesktop from "../images/circle-image__desktop.svg";
-import studioPortrait1440 from "../images/Extended up studio portrait hair fix-1440.jpg";
-import studioPortrait960 from "../images/Extended up studio portrait hair fix-960.jpg";
-import pepImage from "../images/pep-image.jpg";
-import tayosImage from "../images/DSCF1530.jpg";
-import postImage1 from "../images/posts img 1.jpg";
-import postImage2 from "../images/posts img 2.jpg";
+import { Image } from "astro:assets";
+import circleMobile from "../assets/images/circle-mobile.svg";
+import circleDesktop from "../assets/images/circle-image__desktop.svg";
+import studioPortrait1440 from "../assets/images/Extended up studio portrait hair fix-1440.jpg";
+import studioPortrait960 from "../assets/images/Extended up studio portrait hair fix-960.jpg";
+import pepImage from "../assets/images/pep-image.jpg";
+import tayosImage from "../assets/images/DSCF1530.jpg";
+import postImage1 from "../assets/images/posts img 1.jpg";
+import postImage2 from "../assets/images/posts img 2.jpg";
 ---
 
 <html lang="en">
@@ -25,8 +26,8 @@ import postImage2 from "../images/posts img 2.jpg";
             <div class="hm-pg-hero__sub-heading-wrapper flex">
               <h2 class="hm-pg-hero__sub-heading">full stack designer</h2>
               <picture>
-                <source media="(max-width:768px)" srcset={circleMobile} />
-                <img src={circleDesktop} alt="full stop punctuation" />
+                <source media="(max-width:768px)" srcset={circleMobile.src} />
+                <img src={circleDesktop.src} alt="full stop punctuation" />
               </picture>
             </div>
             <a href="" class="hero-cta-btn" aria-label="cta button"
@@ -39,11 +40,11 @@ import postImage2 from "../images/posts img 2.jpg";
           <picture>
             <source
               media="(max-width:960px)"
-              srcset={studioPortrait960}
+              srcset={studioPortrait960.src}
               class="hm-pg-hero-image"
             />
             <img
-              src={studioPortrait1440}
+              src={studioPortrait1440.src}
               alt="hero image"
               class="hm-pg-hero-image"
             />
@@ -69,15 +70,15 @@ import postImage2 from "../images/posts img 2.jpg";
           <picture>
             <source
               media="(max-width:768px)"
-              srcset={circleMobile}
+              srcset={circleMobile.src}
               aria-label="full stop punctuation"
             />
-            <img src={circleDesktop} alt="full stop punctuation" />
+            <img src={circleDesktop.src} alt="full stop punctuation" />
           </picture>
         </div>
         <div class="hm-pg-projects-case-study-container flex">
           <div class="hm-pg-projects-case-study-img-container">
-            <img
+            <Image
               src={pepImage}
               alt="PEP PEP-case-study-img"
               class="PEP-case-study-img"
@@ -107,7 +108,7 @@ import postImage2 from "../images/posts img 2.jpg";
         </div>
         <div class="hm-pg-projects-case-study-container flex">
           <div class="hm-pg-projects-case-study-img-container">
-            <img
+            <Image
               src={tayosImage}
               alt="PEP PEP-case-study-img-2"
               class="PEP-case-study-img-2"
@@ -152,15 +153,15 @@ import postImage2 from "../images/posts img 2.jpg";
           >
           <h2 class="hm-pg-posts__sub-heading">Posts</h2>
           <picture>
-            <source media="(max-width:768px)" srcset={circleMobile} />
-            <img src={circleDesktop} alt="full stop punctuation" />
+            <source media="(max-width:768px)" srcset={circleMobile.src} />
+            <img src={circleDesktop.src} alt="full stop punctuation" />
           </picture>
         </div>
         <div class="hm-pg-posts-container flex">
           <div class="hm-pg-single-post-container">
             <div class="hm-pg-single-post-img-container">
               <img
-                src={postImage1}
+                src={postImage1.src}
                 alt="single-post-img"
                 class="hm-pg-single-post-img"
               />
@@ -219,7 +220,7 @@ import postImage2 from "../images/posts img 2.jpg";
           <div class="hm-pg-single-post-container">
             <div class="hm-pg-single-post-img-container">
               <img
-                src={postImage2}
+                src={postImage2.src}
                 alt="single-post-img"
                 class="hm-pg-single-post-img-2"
               />
