@@ -1,0 +1,42 @@
+---
+const {
+  class: className,
+  btnLink = "mailto:contact@bayagardenstudio.com",
+  text = "Contact Me",
+} = Astro.props;
+---
+
+<a
+  href={btnLink}
+  class:list={["cta-btn", className || "cta-btn", "cta-btn-dark"]}
+  aria-label="cta button"><span class="sr-only">{text}</span></a
+>
+<!-- class:list will combine the classes but where a prop is not passed, it will combine the latter -->
+
+<style>
+  .cta-btn {
+    display: inline-block;
+    margin-block: 2.5rem;
+    transition: 0.2s;
+    padding: 1em 1.5em;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .cta-btn:hover,
+  .cta-btn:focus {
+    border-radius: 2rem;
+    color: var(--accent-color);
+  }
+
+  .cta-btn-dark {
+    border: solid 3px var(--accent-color);
+    color: var(--secondary-color);
+  }
+
+  .cta-btn-light {
+    border: solid 3px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+  }
+</style>

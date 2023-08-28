@@ -3,11 +3,11 @@ import "../styles/global.css";
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import circleMobile from "../assets/images/circle-mobile.svg";
 import circleDesktop from "../assets/images/circle-image__desktop.svg";
 import studioPortrait1440 from "../assets/images/Extended up studio portrait hair fix-1440.jpg";
-import studioPortrait960 from "../assets/images/Extended up studio portrait hair fix-960.jpg";
 import pepImage from "../assets/images/pep-image.jpg";
 import tayosImage from "../assets/images/DSCF1530.jpg";
 import postImage1 from "../assets/images/posts img 1.jpg";
@@ -30,10 +30,7 @@ import postImage2 from "../assets/images/posts img 2.jpg";
                 <img src={circleDesktop.src} alt="full stop punctuation" />
               </picture>
             </div>
-            <a href="" class="hero-cta-btn" aria-label="cta button"
-              ><span class="sr-only hero-cta-text">Let's work together!</span
-              ></a
-            >
+            <Button text="Let's work together" />
           </div>
         </div>
         <div class="hm-pg-hero-image-section">
@@ -130,12 +127,7 @@ import postImage2 from "../assets/images/posts img 2.jpg";
           </div>
         </div>
         <div class="hm-pg-projects-cta-btn-wrapper flex">
-          <a
-            href=""
-            class="hero-cta-btn hm-pg-projects-cta-btn"
-            aria-controls="read more button"
-            ><span class="sr-only hero-cta-text">Let's work together!</span></a
-          >
+          <Button text="See more projects" />
         </div>
       </div>
     </section>
@@ -272,11 +264,7 @@ import postImage2 from "../assets/images/posts img 2.jpg";
           </div>
         </div>
         <div class="hm-pg-posts-cta-btn-wrapper flex">
-          <a href="" class="hm-pg-posts-cta-btn" aria-controls="read more btn"
-            ><span class="sr-only hm-pg-posts-cta-text"
-              >Let's work together!</span
-            ></a
-          >
+          <Button class="cta-btn-light" text="Read more posts" />
         </div>
       </div>
     </section>
@@ -329,29 +317,6 @@ import postImage2 from "../assets/images/posts img 2.jpg";
         .hm-pg-hero__sub-heading {
           font-size: 2.3rem;
         }
-      }
-
-      .hero-cta-btn {
-        display: inline-block;
-        margin-block: 2.5rem;
-        border: solid 3px var(--accent-color);
-        transition: 0.2s;
-        padding: 1em 1.5em;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
-
-      .hero-cta-btn:hover,
-      .hero-cta-btn:focus {
-        border-radius: 2rem;
-      }
-
-      .hero-cta-text {
-        color: var(--secondary-color);
-      }
-
-      .hero-cta-btn:hover > .hero-cta-text {
-        color: var(--accent-color);
       }
 
       /*------------------Hero-homepage-images------------------- */
@@ -755,29 +720,6 @@ import postImage2 from "../assets/images/posts img 2.jpg";
       .hm-pg-single-post-btn:hover > .hm-pg-single-post-btn-text {
         color: var(--accent-color);
         text-decoration-color: var(--accent-color);
-      }
-
-      .hm-pg-posts-cta-btn {
-        display: inline-block;
-        margin-block: 2.5rem;
-        border: solid 3px var(--primary-color);
-        transition: 0.2s;
-        padding: 1em 1.5em;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
-
-      .hm-pg-posts-cta-btn:hover,
-      .hm-pg-posts-cta-btn:focus {
-        border-radius: 2rem;
-      }
-
-      .hm-pg-posts-cta-text {
-        color: var(--primary-color);
-      }
-
-      .hm-pg-posts-cta-btn:hover > .hm-pg-posts-cta-text {
-        color: var(--accent-color);
       }
 
       /* -------------hm-pg-posts @ max-width:790px------------------- */
