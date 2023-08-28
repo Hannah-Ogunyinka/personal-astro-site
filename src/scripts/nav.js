@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Get a reference to the nav-container
 const outernavContainer = document.querySelector(".nav-outer-container");
 const logo = document.querySelector(".logo");
+const logoText = document.querySelector(".logo-text");
 
 // Listen for scroll events
 window.addEventListener("scroll", () => {
@@ -33,9 +34,11 @@ window.addEventListener("scroll", () => {
     // Add the 'scrolled' class to apply the dark background
     outernavContainer.classList.add("scrolled");
     logo.classList.add("scrolled");
+    logoText.classList.add("scrolled");
   } else {
     // Remove the 'scrolled' class to make the background transparent
     outernavContainer.classList.remove("scrolled");
     logo.classList.remove("scrolled");
+    logoText.classList.remove("scrolled");
   }
 });

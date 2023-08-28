@@ -112,7 +112,6 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
     align-items: center;
     gap: 20px;
     position: relative;
-    cursor: pointer;
   }
 
   .logo-wrapper:hover > .logo-text {
@@ -131,10 +130,17 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
     font-size: 1.2rem;
     letter-spacing: normal;
     transform: translate(0, 0);
-    opacity: 0;
+    opacity: 0; /*connected to hover action*/
     transition: transform 0.2s ease, opacity 0.2s ease;
     position: absolute;
     z-index: -1;
+    visibility: hidden; /*connected to .logo-text.scrolled */
+  }
+
+  .logo-text.scrolled {
+    visibility: visible;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay: 0.1s;
   }
 
   nav ul {
