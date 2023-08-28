@@ -1,6 +1,7 @@
 ---
 import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
 import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
+import { Image } from "astro:assets";
 ---
 
 <header>
@@ -32,8 +33,8 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
     </div>
     <div class="mobile-menu-section">
       <div class="mobile-icon-wrapper">
-        <img
-          src={mobileMenuIcon.src}
+        <Image
+          src={mobileMenuIcon}
           alt="Mobile-icon"
           class="mobile-icon"
           id="openNavBtn"
