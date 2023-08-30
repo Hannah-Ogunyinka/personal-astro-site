@@ -32,15 +32,10 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
       </nav>
     </div>
     <div class="mobile-menu-section">
-      <div class="mobile-icon-wrapper">
-        <Image
-          src={mobileMenuIcon}
-          alt="Mobile-icon"
-          loading={"eager"}
-          class="mobile-icon"
-          id="openNavBtn"
-          style="cursor: pointer"
-        />
+      <div class="mobile-icon-wrapper" id="openNavBtn" style="cursor: pointer">
+        <span class="menu-icon-line1"></span>
+        <span class="menu-icon-line2"></span>
+        <span class="menu-icon-line3"></span>
       </div>
 
       <div id="myNav" class="mobile-menu">
@@ -213,11 +208,15 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
       position: relative;
       width: 100%;
       height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
     .mobile-icon-wrapper {
-      position: absolute;
-      right: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      margin-right: 2.5rem;
     }
   }
 
@@ -225,14 +224,19 @@ import mobileMenuIcon from "../assets/images/Mobile-menu-icon.svg";
   /* ----------------------------------------------------------------------------------- */
 
   /*----------------------------- Mobile menu icon-------------------- */
-  .mobile-icon {
-    padding-block: 2rem;
+
+  .menu-icon-line1,
+  .menu-icon-line2,
+  .menu-icon-line3 {
+    display: block;
+    background-color: var(--accent-color);
+    height: 3px;
     width: 38px;
-    height: 84px;
+    margin-block: 5px 0;
   }
 
   @media (min-width: 1024px) {
-    .mobile-icon {
+    .mobile-icon-wrapper {
       display: none;
     }
   }
