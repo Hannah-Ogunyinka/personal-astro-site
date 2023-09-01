@@ -2,12 +2,21 @@
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import "../styles/global.css";
+import { getCollection } from "astro:content";
+const projectPosts = await getCollection("projects");
 ---
 
 <html lang="en">
   <Head />
   <body>
     <Header />
+{
+  projectPosts.map(project=>(
+    <h2>{project.data.title}</h2>
+    <p>{project.data.description}</p>
+    <a href={`/projects/${project.slug}`}>Read more</a>
+  ))
+}
     <script>
       import "../scripts/nav.js";
     </script>

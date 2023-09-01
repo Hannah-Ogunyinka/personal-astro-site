@@ -1,0 +1,541 @@
+---
+import Head from "../components/head.astro";
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <Head />
+  <body>
+    <main class="project-template__main-content">
+      <section>
+        <section>
+          <div class="flex projects-hero-container">
+            <div class="flex project-hero__title-box">
+              <h1 class="project-hero__h1">{frontmatter.title}</h1>
+              <h2 class="project-hero__h2">
+                Decadent brownies made to order from our kitchen to your door
+              </h2>
+            </div>
+            <div class="flex project-hero__feature-list-box">
+              <ul class="project-hero__feature-list">
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+                <li class="remove-bullet-point">
+                  <span class="project-hero__feature-item-text">Strategy</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="inner-container-85rem-with-block-padding">
+            <img
+              src="https://pinegrow.com/placeholders/img20.jpg"
+              class="project-1st-img"
+            />
+          </div>
+        </section>
+        <section>
+          <div
+            class="flex inner-container-85rem-with-block-padding project-template-third-sec-container"
+          >
+            <div class="flex project-template-third-sec-col-lft">
+              <h2 class="project-template-third-sec__h2">Heading 1</h2>
+            </div>
+            <div class="flex project-template-third-sec-col-rght">
+              <p class="project-template-third-sec__p">
+                This is a paragraph, one or more lines of text. Each paragraph
+                is displayed in a new line.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="inner-container-1920">
+            <img
+              src="https://pinegrow.com/placeholders/img12.jpg"
+              class="project-template-fourth-sec-img"
+            />
+          </div>
+        </section>
+        <section>
+          <div
+            class="flex inner-container-85rem-with-block-padding project-template-fifth-section-container"
+          >
+            <div class="flex project-template-third-sec-col-lft">
+              <h2 class="project-template-third-sec__h2">Heading 1</h2>
+            </div>
+            <div class="flex project-template-third-sec-col-rght">
+              <p>
+                This is a paragraph, one or more lines of text. Each paragraph
+                is displayed in a new line.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div
+            class="flex inner-container-85rem-with-block-padding project-template-column-gap"
+          >
+            <div class="flex project-template-fifth-section-col-lft">
+              <img
+                src="https://pinegrow.com/placeholders/img13.jpg"
+                class="project-template-fifth-section-lft-img"
+              />
+            </div>
+            <div class="flex project-template-fifth-section-col-rght">
+              <img
+                src="https://pinegrow.com/placeholders/img15.jpg"
+                class="project-template-fifth-section-rt-img"
+              />
+            </div>
+          </div>
+        </section>
+        <section>
+          <div
+            class="flex inner-container-85rem-with-block-padding project-template-seventh-section-container"
+          >
+            <div class="flex project-template-third-sec-col-lft">
+              <h2 class="project-template-third-sec__h2">Heading 1</h2>
+            </div>
+            <div class="flex project-template-third-sec-col-rght">
+              <p>
+                This is a paragraph, one or more lines of text. Each paragraph
+                is displayed in a new line.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="inner-container-1920">
+            <img
+              src="https://pinegrow.com/placeholders/img12.jpg"
+              class="project-template-fourth-sec-img"
+            />
+          </div>
+        </section>
+        <section>
+          <div
+            class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container"
+          >
+            <div class="flex project-template-nineth-sec-col-lft">
+              <div>
+                <h2
+                  class="project-template-nineth-sec__h2 project-template-third-sec__h2"
+                >
+                  Heading 1
+                </h2>
+                <p>
+                  This is a paragraph, one or more lines of text. Each paragraph
+                  is displayed in a new line.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container"
+            >
+              <video class="project-template-nineth-sec-video"
+                >Your browser doesn't support HTML5 video tag.</video
+              >
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="inner-container-85rem-with-block-padding">
+            <img
+              class="project-template-tenth-sec-img"
+              src="https://pinegrow.com/placeholders/img18.jpg"
+            />
+          </div>
+        </section>
+      </section>
+    </main>
+    <style>
+      /* ----Custom properties ---- */
+      :root {
+        position: relative;
+        min-height: 100%;
+
+        /* Colors */
+        --primary-color: #1a2124;
+        --accent-color: #f48434;
+        --secondary-color: #ffffff;
+
+        /* font-sizes */
+        font-size: 16px;
+        --fs-1: clamp(2rem, 8vw + 1rem, 4.5rem);
+
+        --fs-2: clamp(2rem, 4vw, 3rem);
+
+        /* body */
+        --fs-3: 1.125rem;
+
+        --fs-4: clamp(0.8rem, 4vw, 1.125rem);
+
+        /* font-families */
+        --ff-sans-normal: "Inter", sans-serif;
+        --ff-mono: "Source Code Pro", monospace;
+
+        /* font-weights */
+        --fw-hero-heading: 900;
+        --fw-800: 800;
+        --fw-heading: 700;
+        --fw-sub-heading: 600;
+        --fw-500: 500;
+        --fw-body-text: 400;
+        --fw-300: 300;
+      }
+
+      @media (max-width: 400px) {
+        :root {
+          font-size: 14px;
+        }
+      }
+
+      /* ------------------- */
+      /* Utility classes */
+      /* ------------------- */
+      .remove-bullet-point {
+        list-style: none;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .grid {
+        display: grid;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+
+      .text-align-center {
+        text-align: center;
+      }
+
+      /* ----------------------------Global Styles---------------------------- */
+      /* ------------------------------------------------------------------- */
+
+      .inner-container-85rem-with-block-padding {
+        padding-inline: 2.5rem;
+        margin-inline: auto;
+        max-width: 85rem;
+        padding-block: 2.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .inner-container-with-block-padding {
+          padding-block: 2rem 4rem;
+        }
+
+        .inner-container-85rem-with-block-padding {
+          padding-block: 2rem;
+        }
+      }
+
+      body {
+        position: relative;
+        overflow-x: hidden;
+        background-color: var(--primary-color);
+        font-size: var(--fs-4);
+        font-family: var(--ff-sans-normal);
+        font-weight: var(--fw-300);
+        max-width: 3840px;
+        color: var(--secondary-color);
+      }
+
+      h1 {
+        font-size: var(--fs-1);
+        letter-spacing: 0.1rem;
+        margin-bottom: 2rem;
+        display: inline-block;
+      }
+
+      h2 {
+        font-size: var(--fs-2);
+        letter-spacing: 0.04rem;
+        margin-bottom: 2.5rem;
+        display: inline-block;
+        font-weight: var(--fw-heading);
+      }
+
+      h3 {
+        font-size: clamp(2rem, 3.5vw, 5rem);
+        font-weight: var(--fw-heading);
+        line-height: normal;
+        margin-bottom: 2rem;
+        text-align: left;
+        max-width: 60ch;
+      }
+
+      p {
+        font-weight: var(--fw-body-text);
+        line-height: 1.5;
+        margin-bottom: 2.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--accent-color);
+      }
+
+      .preheading {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: var(--fw-sub-heading);
+        display: block;
+        text-transform: uppercase;
+      }
+
+      /* ------------------ Hero section ----------------------- */
+      /* ----------------------------------------------------- */
+      /* margin top necessary to avoid navigation blocking content */
+      /* .project-template__main-content {
+        margin-top: 9rem;
+      } */
+
+      /* ------------------ Project Hero section ----------------------- */
+      /* --------------------------------------------------------------- */
+      .projects-hero-container {
+        max-width: 85rem;
+        min-height: 300px;
+        padding-inline: 2.5rem;
+        margin-inline: auto;
+      }
+
+      .project-hero__title-box {
+        width: 70%;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .project-hero__feature-list-box {
+        width: 30%;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .project-hero__h1 {
+        font-weight: var(--fw-sub-heading);
+        margin-bottom: 2.5rem;
+        letter-spacing: normal;
+        font-family: "Inter", sans-serif;
+        text-transform: uppercase;
+      }
+
+      .project-hero__h2 {
+        color: var(--accent-color);
+        max-width: 22ch;
+        font-weight: var(--fw-sub-heading);
+        letter-spacing: 0.8;
+        margin-bottom: 0rem;
+      }
+
+      .project-hero__feature-list {
+        text-align: right;
+        font-weight: var(--fw-body-text);
+        letter-spacing: 0.03rem;
+        line-height: 1.5;
+        margin-bottom: 0rem;
+        font-size: var(--fs-5);
+      }
+
+      .project-hero__feature-item-text {
+        letter-spacing: 0.03rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .projects-hero-container {
+          flex-direction: column;
+        }
+
+        .project-hero__title-box {
+          width: 100%;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
+
+        .project-hero__h2 {
+          margin-bottom: 2rem;
+        }
+
+        .project-hero__feature-list-box {
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .project-hero__feature-list {
+          text-align: left;
+        }
+      }
+
+      /* ---------------- section two------------------------------ */
+      .project-1st-img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      /* ---------------- section three------------------------------ */
+      .project-template-third-sec-col-lft {
+        width: 55%;
+        align-items: center;
+      }
+
+      .project-template-third-sec-col-rght {
+        width: 45%;
+        align-items: center;
+      }
+
+      .project-template-third-sec__h2 {
+        max-width: 20ch;
+        font-weight: var(--fw-sub-heading);
+        letter-spacing: 0.8;
+        margin-bottom: 0rem;
+      }
+
+      @media (max-width: 768px) {
+        .project-template-third-sec-container {
+          flex-direction: column;
+        }
+
+        .project-template-third-sec-col-lft {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .project-template-third-sec-col-rght {
+          width: 100%;
+          justify-content: flex-start;
+        }
+
+        .project-template-third-sec__h2 {
+          margin-bottom: 2rem;
+        }
+
+        .project-template-third-sec__p {
+          margin-bottom: 0;
+        }
+      }
+
+      /* ---------------- section four------------------------------ */
+      .project-template-fourth-sec-img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        object-position: center 0;
+      }
+
+      .project-template-column-gap {
+        column-gap: 3rem;
+      }
+
+      /* ---------------- section five------------------------------ */
+      .project-template-fifth-section-lft-img {
+        width: 100%;
+        height: 100%;
+        margin-block: 2rem;
+        object-fit: cover;
+      }
+
+      .project-template-fifth-section-rt-img {
+        width: 100%;
+        margin-block: 2rem;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .project-template-fifth-section-col-lft {
+        width: 30%;
+        max-height: 50rem;
+        align-items: center;
+      }
+
+      .project-template-fifth-section-col-rght {
+        width: 70%;
+        max-height: 50rem;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .project-template-fifth-section-container {
+          flex-direction: column;
+        }
+      }
+
+      /* ---------------- section seven------------------------------ */
+      @media (max-width: 768px) {
+        .project-template-seventh-section-container {
+          flex-direction: column;
+        }
+      }
+
+      /* ---------------- section nine------------------------------ */
+      .project-template-nineth-sec__h2 {
+        margin-bottom: 2rem;
+      }
+
+      .project-template-nineth-sec-video {
+        width: 100%;
+        height: 100%;
+      }
+
+      .project-template-nineth-section-video-container {
+        max-height: 70rem;
+      }
+
+      .project-template-nineth-sec-col-lft {
+        width: 40%;
+        align-items: center;
+      }
+
+      .project-template-nineth-sec-col-rght {
+        width: 60%;
+        align-items: center;
+      }
+
+      @media (max-width: 1280px) {
+        .project-template-nineth-section-container {
+          flex-direction: column;
+          row-gap: 2rem;
+        }
+
+        .project-template-nineth-sec-col-lft {
+          width: 100%;
+        }
+
+        .project-template-nineth-sec-col-rght {
+          width: 100%;
+        }
+      }
+
+      /* ---------------- section ten------------------------------ */
+
+      .project-template-tenth-sec-img {
+        width: 100%;
+      }
+    </style>
+  </body>
+</html>
