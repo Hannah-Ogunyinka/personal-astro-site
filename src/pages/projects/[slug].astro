@@ -20,12 +20,14 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 ---
 
-<Head />
-<body>
-  <Header />
-  <Content />
-  <Footer />
-  <script>
-    import "../../scripts/nav.js";
-  </script>
-</body>
+<html lang="en">
+  <Head />
+  <body>
+    <Header />
+    <Content />
+    <Footer />
+    <script>
+      import "../../scripts/nav.js";
+    </script>
+  </body>
+</html>
