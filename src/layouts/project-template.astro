@@ -164,6 +164,31 @@ const { frontmatter } = Astro.props;
       </section>
     </main>
     <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* Reset margins */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      p,
+      figure,
+      picture,
+      body {
+        margin: 0;
+      }
+
+      /* reset ul */
+      ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+      }
       /* ----Custom properties ---- */
       :root {
         position: relative;
@@ -309,9 +334,9 @@ const { frontmatter } = Astro.props;
       /* ------------------ Hero section ----------------------- */
       /* ----------------------------------------------------- */
       /* margin top necessary to avoid navigation blocking content */
-      /* .project-template__main-content {
-        margin-top: 9rem;
-      } */
+      .project-template__main-content {
+        margin-top: 6rem;
+      }
 
       /* ------------------ Project Hero section ----------------------- */
       /* --------------------------------------------------------------- */
