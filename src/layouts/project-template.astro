@@ -1,6 +1,19 @@
 ---
 import Head from "../components/head.astro";
-const { frontmatter } = Astro.props;
+import FeatureList from "../components/feature-list.astro";
+import { Image } from "astro:assets";
+import projectImage1 from "../assets/project-images/DSCF2562-2 full-width.jpg";
+const {
+  title,
+  projectDescription = "Decadent brownies made to order from our kitchen to your door!!!",
+  featureListTextMd1,
+  featureListTextMd2,
+  featureListTextMd3,
+  featureListTextMd4,
+  featureListTextMd5,
+  featureListTextMd6,
+  projectImage1md,
+} = Astro.props.frontmatter;
 ---
 
 <html lang="en">
@@ -11,41 +24,24 @@ const { frontmatter } = Astro.props;
         <section>
           <div class="flex projects-hero-container">
             <div class="flex project-hero__title-box">
-              <h1 class="project-hero__h1">{frontmatter.title}</h1>
-              <h2 class="project-hero__h2">
-                Decadent brownies made to order from our kitchen to your door
-              </h2>
+              <h1 class="project-hero__h1">{title}</h1>
+              <h2 class="project-hero__h2">{projectDescription}</h2>
             </div>
             <div class="flex project-hero__feature-list-box">
               <ul class="project-hero__feature-list">
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
-                <li class="remove-bullet-point">
-                  <span class="project-hero__feature-item-text">Strategy</span>
-                </li>
+                <FeatureList featureListText={featureListTextMd1} />
+                <FeatureList featureListText={featureListTextMd2} />
+                <FeatureList featureListText={featureListTextMd3} />
+                <FeatureList featureListText={featureListTextMd4} />
+                <FeatureList featureListText={featureListTextMd5} />
+                <FeatureList featureListText={featureListTextMd6} />
               </ul>
             </div>
           </div>
         </section>
         <section>
           <div class="inner-container-85rem-with-block-padding">
-            <img
-              src="https://pinegrow.com/placeholders/img20.jpg"
-              class="project-1st-img"
-            />
+            <img src={projectImage1.src} class="project-1st-img" alt="" />
           </div>
         </section>
         <section>
@@ -65,9 +61,12 @@ const { frontmatter } = Astro.props;
         </section>
         <section>
           <div class="inner-container-1920">
-            <img
+            <Image
               src="https://pinegrow.com/placeholders/img12.jpg"
               class="project-template-fourth-sec-img"
+              alt=""
+              width="100%"
+              height="100%"
             />
           </div>
         </section>
