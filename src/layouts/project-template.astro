@@ -2,7 +2,7 @@
 import Head from "../components/head.astro";
 import FeatureList from "../components/feature-list.astro";
 import { Image } from "astro:assets";
-import projectImage1 from "../assets/project-images/DSCF2562-2 full-width.jpg";
+import projectImage1 from "../assets/project-images/tmb-founder.jpg";
 const {
   title,
   projectDescription = "Decadent brownies made to order from our kitchen to your door!!!",
@@ -14,6 +14,7 @@ const {
   featureListTextMd6,
   projectImage1md,
 } = Astro.props.frontmatter;
+console.log(Astro.props.frontmatter);
 ---
 
 <html lang="en">
@@ -41,7 +42,11 @@ const {
         </section>
         <section>
           <div class="inner-container-85rem-with-block-padding">
-            <img src={projectImage1.src} class="project-1st-img" alt="" />
+            <img
+              src={projectImage1.src}
+              class="project-1st-img"
+              alt={projectImage1md.alt}
+            />
           </div>
         </section>
         <section>
@@ -194,7 +199,7 @@ const {
         min-height: 100%;
 
         /* Colors */
-        --primary-color: #1a2124;
+        --primary-color: #22292d;
         --accent-color: #f48434;
         --secondary-color: #ffffff;
 

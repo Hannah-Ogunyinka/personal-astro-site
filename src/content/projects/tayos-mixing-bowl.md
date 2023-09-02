@@ -8,5 +8,6 @@ projectDescription: "Decadent brownies made to order from our kitchen to your do
 featureListTextMd1: "wireframe"
 featureListTextMd2: "wireframe"
 featureListTextMd3: "wireframe"
-projectImage1md: "projectImage1.src"
+projectImage1md:
+  { src: "../../assets/project-images/tmb-founder.jpg", alt: "founder image" }
 ---

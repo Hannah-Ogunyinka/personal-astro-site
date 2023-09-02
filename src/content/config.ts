@@ -7,6 +7,10 @@ const Projects = defineCollection({
     title: z.string(),
     description: z.string(),
     tags: z.array(z.string()),
+    projectImage1md: z.object({
+      src: z.string(), // Image source can be URL or local file path
+      alt: z.string(), // Alt text for the image
+    }),
   }),
 });
 
