@@ -2,7 +2,7 @@
 import Head from "../components/head.astro";
 import FeatureList from "../components/feature-list.astro";
 import { Image } from "astro:assets";
-import projectImage1 from "../assets/project-images/tmb-founder.jpg";
+
 const {
   title,
   projectDescription = "Decadent brownies made to order from our kitchen to your door!!!",
@@ -42,10 +42,12 @@ console.log(Astro.props.frontmatter);
         </section>
         <section>
           <div class="inner-container-85rem-with-block-padding">
-            <img
-              src={projectImage1.src}
+            <Image
+              src={projectImage1md.src}
               class="project-1st-img"
               alt={projectImage1md.alt}
+              width="1920"
+              height="1080"
             />
           </div>
         </section>
@@ -66,12 +68,12 @@ console.log(Astro.props.frontmatter);
         </section>
         <section>
           <div class="inner-container-1920">
-            <Image
+            <img
               src="https://pinegrow.com/placeholders/img12.jpg"
               class="project-template-fourth-sec-img"
               alt=""
-              width="100%"
-              height="100%"
+              width="1920"
+              height="1080"
             />
           </div>
         </section>
