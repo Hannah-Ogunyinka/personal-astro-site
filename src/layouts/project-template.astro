@@ -72,7 +72,12 @@ console.log(Astro.props.frontmatter);
               <h2 class="project-template-third-sec__h2">{subtitle1}</h2>
             </div>
             <div class="flex project-template-third-sec-col-rght">
-              <p class="project-template-third-sec__p">{description1}</p>
+              <p
+                class="project-template-third-sec__p"
+                style="white-space: pre-line;"
+              >
+                {description1}
+              </p>
             </div>
           </div>
         </section>
@@ -95,7 +100,7 @@ console.log(Astro.props.frontmatter);
               <h2 class="project-template-third-sec__h2">{subtitle2}</h2>
             </div>
             <div class="flex project-template-third-sec-col-rght">
-              <p>
+              <p style="white-space: pre-line;">
                 {description2}
               </p>
             </div>
@@ -127,7 +132,7 @@ console.log(Astro.props.frontmatter);
               <h2 class="project-template-third-sec__h2">{subtitle3}</h2>
             </div>
             <div class="flex project-template-third-sec-col-rght">
-              <p>
+              <p style="white-space: pre-line;">
                 {description3}
               </p>
             </div>
@@ -152,7 +157,7 @@ console.log(Astro.props.frontmatter);
                 >
                   {subtitle4}
                 </h2>
-                <p>
+                <p style="white-space: pre-line;">
                   {description4}
                 </p>
               </div>
@@ -477,6 +482,7 @@ console.log(Astro.props.frontmatter);
 
         .project-template-third-sec__p {
           margin-bottom: 0;
+          white-space: pre-line;
         }
       }
 
