@@ -2,6 +2,8 @@
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import "../styles/global.css";
+import circleMobile from "../assets/images/circle-mobile.svg";
+import circleDesktop from "../assets/images/circle-image__desktop.svg";
 import { getCollection } from "astro:content";
 const projectPosts = await getCollection("projects");
 ---
@@ -10,10 +12,35 @@ const projectPosts = await getCollection("projects");
   <Head />
   <body>
     <Header />
+    <section class="project-archive-section">
+      <div class="standard-container top-bottom-padding">
+        <div class="project-archive-title-text-container">
+          <h1 class="project-archive__heading">Projects</h1>
+          <picture>
+            <source
+              media="(max-width:768px)"
+              srcset={circleMobile.src}
+              width="13px"
+              height="13px"
+            />
+            <img
+              src={circleDesktop.src}
+              alt="full stop punctuation"
+              width="32px"
+              height="24px"
+            />
+          </picture>
+        </div>
+        <div class="project-archive-description-wrapper">
+            <h2 class="project-archive-description">
+              Sample of projects I've worked on
+            </h2>
+        </div>
+        <section/>
 {
   projectPosts.map(project=>(
     <h2>{project.data.title}</h2>
-    <p>{project.data.description}</p>
+    <p>{project.data.projectDescription}</p>
     <a href={`/projects/${project.slug}`}>Read more</a>
   ))
 }
@@ -22,3 +49,285 @@ const projectPosts = await getCollection("projects");
     </script>
   </body>
 </html>
+<style>
+       /* ---------------------------------Homepage-posts-section-------------------------------- */
+      /* -------------------------------------------------------------------------------------------*/
+
+      .project-archive-section {
+        max-width: 1920px;
+      }
+
+      .hm-pg-posts-preheading {
+        display: block;
+        font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
+        font-weight: var(--fw-sub-heading);
+        margin-bottom: 0.5rem;
+        padding-left: 0.3%;
+      }
+
+      .project-archive__heading {
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        font-size: var(--fs-8);
+        margin-bottom: 2rem;
+      }
+
+      .hm-pg-posts-container {
+        gap: 4rem;
+        padding-top: 4rem;
+      }
+
+      .hm-pg-single-post-container {
+        width: 50%;
+      }
+
+      .hm-pg-single-post-img-container {
+        margin-bottom: 1.8em;
+      }
+
+      .hm-pg-single-post-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .hm-pg-single-post-img-2 {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .post-date-preheading {
+        color: var(--primary-color);
+        letter-spacing: normal;
+      }
+
+      .hm-pg-single-post-title {
+        text-transform: uppercase;
+      }
+
+      .hm-pg-single-post-text-link {
+        color: var(--primary-color);
+      }
+
+      .arrow-icon:hover > .arrow-icon-line {
+        stroke: var(--primary-color);
+      }
+
+      .hm-pg-single-post-text-link:hover,
+      .hm-pg-single-post-text-link:focus {
+        color: var(--accent-color);
+      }
+
+      .hm-pg-single-post-description {
+        color: var(--primary-color);
+        max-width: 45ch;
+        margin-bottom: 1rem;
+      }
+
+      .hm-pg-single-post-btn {
+        display: inline-block;
+        margin-bottom: 2.5rem;
+        transition: 0.2s;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+
+      .hm-pg-single-post-btn-text {
+        color: var(--primary-color);
+        font-weight: var(--fw-500);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-color: var(--primary-color);
+      }
+
+      .hm-pg-single-post-btn:hover > .hm-pg-single-post-btn-text {
+        color: var(--accent-color);
+        text-decoration-color: var(--accent-color);
+      }
+
+      /* -------------hm-pg-posts @ max-width:790px------------------- */
+
+      @media (max-width: 790px) {
+        .homepage-posts .standard-container {
+          padding-inline: 0rem;
+        }
+        .hm-pg-posts-container {
+          gap: 2.5rem;
+          flex-direction: column;
+        }
+        .project-archive-title-text-container {
+          padding-inline: 2.5rem;
+        }
+
+        .hm-pg-single-post-container {
+          width: 100%;
+        }
+
+        .hm-pg-single-post-text-container {
+          padding-inline: 2.5rem;
+        }
+
+        .hm-pg-posts-cta-btn-wrapper {
+          padding-inline: 2.5rem;
+        }
+      }
+
+      .hm-pg-posts-cta-btn-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .hm-pg-single-post-description {
+          font-size: 1.2rem;
+          max-width: 100%;
+        }
+
+        .hm-pg-single-post-btn {
+          margin-bottom: 0rem;
+        }
+
+        .hm-pg-posts-cta-btn-wrapper {
+          justify-content: flex-start;
+        }
+
+        .hm-pg-posts-cta-btn {
+          margin-block: 0;
+        }
+      }
+
+
+      /* -------------------------------------projects------------------------------- */
+      .project-archive-description-wrapper {
+        width: 40%;
+      }
+
+      .project-archive-description {
+        color: var(--accent-color);
+        font-size: clamp(2rem, 3.5vw, 5rem);
+        font-weight: var(--fw-heading);
+        line-height: normal;
+        margin-bottom: 2rem;
+        text-align: left;
+        max-width: 60ch;
+      }
+
+      @media (max-width: 1262px) {
+        .hm-pg-projects-case-study-img-container {
+          align-content: stretch;
+        }
+
+        .PEP-case-study-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: right 0;
+        }
+
+        .PEP-case-study-img-2 {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: left 10;
+        }
+      }
+
+      .hm-pg-preheading {
+        color: var(--accent-color);
+        letter-spacing: 0.1125rem;
+      }
+
+
+
+      .hm-pg-projects-case-study-description {
+        color: var(--secondary-color);
+        font-family: Source Code Pro;
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 45ch;
+        margin-bottom: 1rem;
+      }
+
+      .hm-pg-projects-case-study-btn {
+        display: inline-block;
+        margin-bottom: 2.5rem;
+        transition: 0.2s;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+
+      .hm-pg-projects-case-study-btn-text {
+        color: var(--secondary-color);
+        font-weight: var(--fw-300);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        text-decoration: underline;
+        text-underline-offset: 0.5em;
+        text-decoration-color: var(--accent-color);
+      }
+
+      .hm-pg-projects-case-study-btn:hover
+        > .hm-pg-projects-case-study-btn-text {
+        color: var(--accent-color);
+      }
+
+      /* -------------hm-pg-projects-case-studies @ max-width:790px------------------- */
+
+      @media (max-width: 790px) {
+        .hm-pg-projects-case-study-container {
+          gap: 2.5rem;
+          flex-direction: column;
+        }
+
+        .hm-pg-projects-case-study-img-container {
+          width: 100%;
+        }
+
+        .PEP-case-study-img {
+          width: 100%;
+          max-width: 400px;
+          aspect-ratio: 400/450;
+          object-fit: cover;
+          object-position: right 0;
+        }
+
+        .PEP-case-study-img-2 {
+          width: 100%;
+          max-width: 400px;
+          aspect-ratio: 400/450;
+          object-fit: cover;
+          object-position: left 10;
+        }
+
+        .project-archive-description-wrapper {
+          width: 100%;
+        }
+      }
+
+      .hm-pg-projects-cta-btn-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .hm-pg-projects-case-study-description {
+          font-size: 1.2rem;
+          max-width: 100%;
+        }
+
+        .hm-pg-projects-case-study-btn {
+          margin-bottom: 0rem;
+        }
+
+        .hm-pg-projects-cta-btn-wrapper {
+          justify-content: flex-start;
+        }
+      }
+</style>

@@ -50,6 +50,11 @@ const Projects = defineCollection({
           alt: z.string(), // Alt text for the image
         })
         .optional(),
+      projectVideo: z
+        .object({
+          src: z.string(),
+        })
+        .optional(),
       subtitle1: z.string().optional(),
       description1: z.string().optional(),
       subtitle2: z.string().optional(),
