@@ -29,7 +29,6 @@ const {
   description3,
   subtitle4,
   description4,
-  projectVideo,
 } = Astro.props.frontmatter;
 
 console.log(Astro.props.frontmatter);
@@ -169,7 +168,7 @@ console.log(Astro.props.frontmatter);
             <div
               class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container"
             >
-              <ProjectVideo videoUrl={projectVideo.src} />
+              <ProjectVideo {videoWebm} />
             </div>
           </div>
         </section>
