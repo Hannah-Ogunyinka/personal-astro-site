@@ -1,4 +1,5 @@
 ---
+import "../../styles/project-template-global.css";
 import ProjectTemplate from "../../layouts/project-template.astro";
 import Head from "../../components/head.astro";
 import Header from "../../components/header.astro";
@@ -21,6 +22,7 @@ interface Props {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
+console.log(Content);
 ---
 
 <html lang="en">
