@@ -21,15 +21,18 @@ Tayo’s love for beautifully crafted baked treats with warm, memorable flavours
 
 When she approached Baya Garden studio, she was ready to move on to the next stage and have a website that reflected her brand values and that beautifully conveyed her craft."
 ---
+
+<div class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container" >
 <video
         autoplay
         loop
         muted
         playsinline
         class="project-template-nineth-sec-video"
-        width="640"
-        height="360"
+        width="100%"
+        height="100%"
       >
-        Your browser does not support the video tag.
-        <source src="../../assets/tayo-project-video2.mp4" type="video/mp4" />
-      </video>
+Your browser does not support the video tag.
+<source src="../../public/tayo-project-video2.mp4" type="video/mp4" />
+</video>
+</div>
