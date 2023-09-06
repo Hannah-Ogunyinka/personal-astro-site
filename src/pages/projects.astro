@@ -16,7 +16,7 @@ const projectPosts = await getCollection("projects");
   <Head />
   <body>
     <Header />
-    <section class="project-archive-section">
+    <main class="project-archive-section">
       <div class="standard-container top-bottom-padding">
         <div class="project-archive-heading-wrapper">
           <h1 class="project-archive__heading">Projects</h1>
@@ -36,60 +36,60 @@ const projectPosts = await getCollection("projects");
           </picture>
         </div>
         <div class="project-archive-description-wrapper">
-            <h2 class="project-archive-description">
-              Projects I've worked on
-            </h2>
+          <h2 class="project-archive-description">Projects I've worked on</h2>
         </div>
-        <section/>
 
         <section class="homepage-posts">
-          <div class="hm-pg-posts-container flex">
-            {
-              projectPosts.map(project=>(
-            <div class="hm-pg-single-post-container">
-              <div class="hm-pg-single-post-img-container">
-                <Image
-                  src={postImage1}
-                  alt="single-post-img"
-                  class="hm-pg-single-post-img"
-                />
-              </div>
-              <div class="hm-pg-single-post-text-container">
-                <span class="post-date-preheading preheading">{project.data.tags}</span>
-                <a href="" class="hm-pg-single-post-text-link">
-                  <h3 class="hm-pg-single-post-title">
-                    {project.data.title}
-                  </h3>
-                </a>
-  
-                <p class="hm-pg-single-post-description">
-                  {project.data.projectDescription}
-                </p>
-                <a
-                  href={`/projects/${project.slug}`}
-                  class="hm-pg-single-post-btn"
-                  aria-controls="read more btn"
-                  ><span class="sr-only hm-pg-single-post-btn-text"
-                    >Read More</span></a>
-              </div>
-            </div>
-          </div>
-          ))
-      }
 
+              <div class="hm-pg-posts-container flex">
+                {
+                  projectPosts.map((project) => (
+                <div class="hm-pg-single-post-container">
+                  <div class="hm-pg-single-post-img-container">
+                    <Image
+                      src={postImage1}
+                      alt="single-post-img"
+                      class="hm-pg-single-post-img"
+                    />
+                  </div>
+                  <div class="hm-pg-single-post-text-container">
+                    <span class="post-date-preheading preheading">
+                      {project.data.tags}
+                    </span>
+                    <a href="" class="hm-pg-single-post-text-link">
+                      <h3 class="hm-pg-single-post-title">
+                        {project.data.title}
+                      </h3>
+                    </a>
+
+                    <p class="hm-pg-single-post-description">
+                      {project.data.projectDescription}
+                    </p>
+                    <a
+                      href={`/projects/${project.slug}`}
+                      class="hm-pg-single-post-btn"
+                      aria-controls="read more btn"
+                    >
+                      <span class="sr-only hm-pg-single-post-btn-text">
+                        Read More
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
         </section>
         <div class="hm-pg-posts-cta-btn-wrapper flex">
           <Button class="cta-btn-light" text="Read more posts" />
         </div>
-
-
+      </div>
+    </main>
     <script>
       import "../scripts/nav.js";
     </script>
-  </body>
-</html>
-<style>
-       /* ---------------------------------Homepage-posts-section-------------------------------- */
+    <style>
+      /* ---------------------------------Homepage-posts-section-------------------------------- */
       /* -------------------------------------------------------------------------------------------*/
 
       .project-archive-section {
@@ -105,19 +105,15 @@ const projectPosts = await getCollection("projects");
         padding-left: 0.3%;
       }
 
-
       .project-archive-heading-wrapper {
-          padding-top: 5rem;
-        }
+        padding-top: 5rem;
+      }
       .project-archive__heading {
         text-transform: uppercase;
         color: var(--secondary-color);
         font-size: var(--fs-8);
-        margin-bottom: 2rem;
-      }
-
-      .homepage-posts{
-        max-width: 1920px;
+        margin-bottom: 1rem;
+        line-height: 1;
       }
 
       .hm-pg-posts-container {
@@ -127,9 +123,7 @@ const projectPosts = await getCollection("projects");
       }
 
       .hm-pg-single-post-container {
-        width: 50%;
-        /* min-width: 50%; */
-        flex:1;
+        width: 47.55%;
       }
 
       .hm-pg-single-post-img-container {
@@ -218,9 +212,6 @@ const projectPosts = await getCollection("projects");
           width: 100%;
         }
 
-        .hm-pg-single-post-text-container {
-          padding-inline: 2.5rem;
-        }
 
         .hm-pg-posts-cta-btn-wrapper {
           padding-inline: 2.5rem;
@@ -252,7 +243,6 @@ const projectPosts = await getCollection("projects");
           margin-block: 0;
         }
       }
-
 
       /* -------------------------------------projects------------------------------- */
       .project-archive-description-wrapper {
@@ -293,8 +283,6 @@ const projectPosts = await getCollection("projects");
         color: var(--accent-color);
         letter-spacing: 0.1125rem;
       }
-
-
 
       .hm-pg-projects-case-study-description {
         color: var(--secondary-color);
@@ -382,4 +370,6 @@ const projectPosts = await getCollection("projects");
           justify-content: flex-start;
         }
       }
-</style>
+    </style>
+  </body>
+</html>
