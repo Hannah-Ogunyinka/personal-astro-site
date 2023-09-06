@@ -26,7 +26,7 @@ const Projects = defineCollection({
       projectImage5mdalt: z.string().optional(),
       projectImage6md: image().optional(),
       projectImage6mdalt: z.string().optional(),
-      projectVideoUrl: image().optional(),
+      projectVideoUrl: z.string().optional(),
       subtitle1: z.string().optional(),
       description1: z.string().optional(),
       subtitle2: z.string().optional(),
