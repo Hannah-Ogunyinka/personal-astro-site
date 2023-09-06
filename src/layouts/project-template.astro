@@ -26,6 +26,7 @@ const {
   projectImage5mdalt,
   projectImage6md,
   projectImage6mdalt,
+  projectVideoUrl,
   subtitle1,
   description1,
   subtitle2,
@@ -170,7 +171,18 @@ console.log(Astro.props.frontmatter);
         <div
           class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container"
         >
-          <ProjectVideo {videoWebm} />
+        <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="project-template-nineth-sec-video"
+        width="640"
+        height="360"
+      >
+        Your browser does not support the video tag.
+        <source src={projectVideoUrl} type="video/mp4"  />
+      </video>
         </div>
       </div>
     </section>
