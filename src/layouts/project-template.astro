@@ -15,11 +15,17 @@ const {
   featureListTextMd5,
   featureListTextMd6,
   projectImage1md,
+  projectImage1mdalt,
   projectImage2md,
+  projectImage2mdalt,
   projectImage3md,
+  projectImage3mdalt,
   projectImage4md,
+  projectImage4mdalt,
   projectImage5md,
+  projectImage5mdalt,
   projectImage6md,
+  projectImage6mdalt,
   subtitle1,
   description1,
   subtitle2,
@@ -56,9 +62,9 @@ console.log(Astro.props.frontmatter);
     <section>
       <div class="inner-container-85rem-with-block-padding">
         <Image
-          src={projectImage1md.src}
+          src={projectImage1md}
           class="project-1st-img"
-          alt={projectImage1md.alt}
+          alt={projectImage1mdalt}
           loading={"eager"}
         />
       </div>

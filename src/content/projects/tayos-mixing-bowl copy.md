@@ -9,8 +9,8 @@ featureListTextMd3: "Professional photography"
 featureListTextMd4: "Professional videography"
 featureListTextMd5: "Custom checkout"
 featureListTextMd6: "Conditional enquiry forms"
-projectImage1md:
-  { src: "../../assets/project-images/tmb-founder.jpg", alt: "founder image" }
+projectImage1md: "../../assets/project-images/tmb-founder.jpg"
+projectImage1mdalt: "founder image"
 subtitle1: '"Baya Garden studio went over and beyond to create an amazing website for my online bakery business."'
 description1: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions.\n
 

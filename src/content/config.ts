@@ -14,42 +14,18 @@ const Projects = defineCollection({
       featureListTextMd4: z.string().optional(),
       featureListTextMd5: z.string().optional(),
       featureListTextMd6: z.string().optional(),
-      projectImage1md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
-      projectImage2md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
-      projectImage3md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
-      projectImage4md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
-      projectImage5md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
-      projectImage6md: z
-        .object({
-          src: image(), // Image source can be URL or local file path
-          alt: z.string(), // Alt text for the image
-        })
-        .optional(),
+      projectImage1md: image().optional(),
+      projectImage1mdalt: z.string().optional(),
+      projectImage2md: image().optional(),
+      projectImage2mdalt: z.string().optional(),
+      projectImage3md: image().optional(),
+      projectImage3mdalt: z.string().optional(),
+      projectImage4md: image().optional(),
+      projectImage4mdalt: z.string().optional(),
+      projectImage5md: image().optional(),
+      projectImage5mdalt: z.string().optional(),
+      projectImage6md: image().optional(),
+      projectImage6mdalt: z.string().optional(),
       projectVideo: z
         .object({
           src: z.string(),
