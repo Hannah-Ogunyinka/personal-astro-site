@@ -2,9 +2,13 @@
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
 import "../styles/global.css";
+import { Image } from "astro:assets";
 import circleMobile from "../assets/images/circle-mobile.svg";
 import circleDesktop from "../assets/images/circle-image__desktop.svg";
 import { getCollection } from "astro:content";
+import postImage1 from "../assets/images/posts img 1.jpg";
+import postImage2 from "../assets/images/posts img 2.jpg";
+import Button from "../components/Button.astro";
 const projectPosts = await getCollection("projects");
 ---
 
@@ -14,7 +18,7 @@ const projectPosts = await getCollection("projects");
     <Header />
     <section class="project-archive-section">
       <div class="standard-container top-bottom-padding">
-        <div class="project-archive-title-text-container">
+        <div class="project-archive-heading-wrapper">
           <h1 class="project-archive__heading">Projects</h1>
           <picture>
             <source
@@ -37,13 +41,48 @@ const projectPosts = await getCollection("projects");
             </h2>
         </div>
         <section/>
-{
-  projectPosts.map(project=>(
-    <h2>{project.data.title}</h2>
-    <p>{project.data.projectDescription}</p>
-    <a href={`/projects/${project.slug}`}>Read more</a>
-  ))
-}
+
+        <section class="homepage-posts">
+          <div class="hm-pg-posts-container flex">
+            {
+              projectPosts.map(project=>(
+            <div class="hm-pg-single-post-container">
+              <div class="hm-pg-single-post-img-container">
+                <Image
+                  src={postImage1}
+                  alt="single-post-img"
+                  class="hm-pg-single-post-img"
+                />
+              </div>
+              <div class="hm-pg-single-post-text-container">
+                <span class="post-date-preheading preheading">{project.data.tags}</span>
+                <a href="" class="hm-pg-single-post-text-link">
+                  <h3 class="hm-pg-single-post-title">
+                    {project.data.title}
+                  </h3>
+                </a>
+  
+                <p class="hm-pg-single-post-description">
+                  {project.data.projectDescription}
+                </p>
+                <a
+                  href={`/projects/${project.slug}`}
+                  class="hm-pg-single-post-btn"
+                  aria-controls="read more btn"
+                  ><span class="sr-only hm-pg-single-post-btn-text"
+                    >Read More</span></a>
+              </div>
+            </div>
+          </div>
+          ))
+      }
+
+        </section>
+        <div class="hm-pg-posts-cta-btn-wrapper flex">
+          <Button class="cta-btn-light" text="Read more posts" />
+        </div>
+
+
     <script>
       import "../scripts/nav.js";
     </script>
@@ -66,6 +105,10 @@ const projectPosts = await getCollection("projects");
         padding-left: 0.3%;
       }
 
+
+      .project-archive-heading-wrapper {
+          padding-top: 5rem;
+        }
       .project-archive__heading {
         text-transform: uppercase;
         color: var(--secondary-color);
@@ -73,13 +116,20 @@ const projectPosts = await getCollection("projects");
         margin-bottom: 2rem;
       }
 
+      .homepage-posts{
+        max-width: 1920px;
+      }
+
       .hm-pg-posts-container {
         gap: 4rem;
         padding-top: 4rem;
+        flex-wrap: wrap;
       }
 
       .hm-pg-single-post-container {
         width: 50%;
+        /* min-width: 50%; */
+        flex:1;
       }
 
       .hm-pg-single-post-img-container {
@@ -99,7 +149,7 @@ const projectPosts = await getCollection("projects");
       }
 
       .post-date-preheading {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         letter-spacing: normal;
       }
 
@@ -108,7 +158,7 @@ const projectPosts = await getCollection("projects");
       }
 
       .hm-pg-single-post-text-link {
-        color: var(--primary-color);
+        color: var(--accent-color);
       }
 
       .arrow-icon:hover > .arrow-icon-line {
@@ -117,11 +167,11 @@ const projectPosts = await getCollection("projects");
 
       .hm-pg-single-post-text-link:hover,
       .hm-pg-single-post-text-link:focus {
-        color: var(--accent-color);
+        color: var(--secondary-color);
       }
 
       .hm-pg-single-post-description {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         max-width: 45ch;
         margin-bottom: 1rem;
       }
@@ -135,13 +185,13 @@ const projectPosts = await getCollection("projects");
       }
 
       .hm-pg-single-post-btn-text {
-        color: var(--primary-color);
+        color: var(--secondary-color);
         font-weight: var(--fw-500);
         text-transform: uppercase;
         font-size: 0.8rem;
         text-decoration: underline;
         text-underline-offset: 0.5em;
-        text-decoration-color: var(--primary-color);
+        text-decoration-color: var(--accent-color);
       }
 
       .hm-pg-single-post-btn:hover > .hm-pg-single-post-btn-text {
@@ -158,9 +208,10 @@ const projectPosts = await getCollection("projects");
         .hm-pg-posts-container {
           gap: 2.5rem;
           flex-direction: column;
+          padding-top: 0rem;
         }
         .project-archive-title-text-container {
-          padding-inline: 2.5rem;
+          padding-top: 5rem;
         }
 
         .hm-pg-single-post-container {
@@ -205,7 +256,7 @@ const projectPosts = await getCollection("projects");
 
       /* -------------------------------------projects------------------------------- */
       .project-archive-description-wrapper {
-        width: 40%;
+        width: 50%;
       }
 
       .project-archive-description {
