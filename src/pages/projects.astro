@@ -60,7 +60,7 @@ const projectPosts = await getCollection("projects");
             </li>
           ))}
         </ul>
-                    <a href="" class="project-archive__single-post-text-link">
+                    <a href={`/projects/${project.slug}`} class="project-archive__single-post-text-link">
                       <h3 class="project-archive__single-project-title">
                         {project.data.title}
                       </h3>
@@ -84,7 +84,7 @@ const projectPosts = await getCollection("projects");
           }
         </section>
         <div class="project-archive__project-cta-btn-wrapper flex">
-          <Button class="cta-btn-light" text="Read more posts" />
+          <Button class="cta-btn-light" btnLink = "/projects/" text="Read more posts" />
         </div>
       </div>
     </main>
