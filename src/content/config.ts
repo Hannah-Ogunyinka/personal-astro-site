@@ -7,6 +7,7 @@ const Projects = defineCollection({
       isDraft: z.boolean(),
       title: z.string(),
       tags: z.array(z.string()),
+      projectBlurb: z.string().optional(),
       projectDescription: z.string().optional(),
       featureListTextMd1: z.string().optional(),
       featureListTextMd2: z.string().optional(),
@@ -26,6 +27,7 @@ const Projects = defineCollection({
       projectImage5mdalt: z.string().optional(),
       projectImage6md: image().optional(),
       projectImage6mdalt: z.string().optional(),
+
       subtitle1: z.string().optional(),
       description1: z.string().optional(),
       subtitle2: z.string().optional(),

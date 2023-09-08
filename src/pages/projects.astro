@@ -5,11 +5,10 @@ import "../styles/global.css";
 import { Image } from "astro:assets";
 import circleMobile from "../assets/images/circle-mobile.svg";
 import circleDesktop from "../assets/images/circle-image__desktop.svg";
-import { getCollection } from "astro:content";
-import postImage1 from "../assets/images/posts img 1.jpg";
-import postImage2 from "../assets/images/posts img 2.jpg";
 import Button from "../components/Button.astro";
+import { getCollection} from "astro:content";
 const projectPosts = await getCollection("projects");
+
 ---
 
 <html lang="en">
@@ -18,7 +17,7 @@ const projectPosts = await getCollection("projects");
     <Header />
     <main class="project-archive-section">
       <div class="standard-container top-bottom-padding">
-        <div class="project-archive-heading-wrapper">
+        <section class="project-archive-heading-wrapper">
           <h1 class="project-archive__heading">Projects</h1>
           <picture>
             <source
@@ -34,43 +33,47 @@ const projectPosts = await getCollection("projects");
               height="24px"
             />
           </picture>
-        </div>
-        <div class="project-archive-description-wrapper">
-          <h2 class="project-archive-description">Projects I've worked on</h2>
-        </div>
+          <div class="project-archive-description-wrapper">
+            <h2 class="project-archive-description">Projects I've worked on</h2>
+          </div>
+        </section>
 
-        <section class="homepage-posts">
-
-              <div class="hm-pg-posts-container flex">
+        <section class="project-archive__project-container">
+              <div class="project-archive__project-loop flex">
                 {
                   projectPosts.map((project) => (
-                <div class="hm-pg-single-post-container">
-                  <div class="hm-pg-single-post-img-container">
+                <div class="project-archive__single-project-container">
+                  <div class="project-archive__project-img-container">
                     <Image
                       src={project.data.projectImage1md}
-                      alt="single-post-img"
-                      class="hm-pg-single-post-img"
+                      alt="project-img"
+                      class="project-archive__single-project-img"
                     />
                   </div>
-                  <div class="hm-pg-single-post-text-container">
-                    <span class="post-date-preheading preheading">
-                      {project.data.tags}
-                    </span>
-                    <a href="" class="hm-pg-single-post-text-link">
-                      <h3 class="hm-pg-single-post-title">
+                  <div class="project-archive__single-project-text-container">
+                    <ul class = "single-project__tag-list">
+                    {project.data.tags.map((tag) => (
+                    <li >
+              <span class="single-project__tag">
+                {tag}
+              </span>
+            </li>
+          ))}
+        </ul>
+                    <a href="" class="project-archive__single-post-text-link">
+                      <h3 class="project-archive__single-project-title">
                         {project.data.title}
                       </h3>
                     </a>
-
-                    <p class="hm-pg-single-post-description">
+                    <p class="project-archive__single-project-description">
                       {project.data.projectDescription}
                     </p>
                     <a
                       href={`/projects/${project.slug}`}
-                      class="hm-pg-single-post-btn"
+                      class="project-archive__single-project-btn"
                       aria-controls="read more btn"
                     >
-                      <span class="sr-only hm-pg-single-post-btn-text">
+                      <span class="sr-only project-archive__single-project-btn-text">
                         Read More
                       </span>
                     </a>
@@ -80,7 +83,7 @@ const projectPosts = await getCollection("projects");
             ))
           }
         </section>
-        <div class="hm-pg-posts-cta-btn-wrapper flex">
+        <div class="project-archive__project-cta-btn-wrapper flex">
           <Button class="cta-btn-light" text="Read more posts" />
         </div>
       </div>
@@ -97,14 +100,6 @@ const projectPosts = await getCollection("projects");
         margin-inline: auto;
       }
 
-      .hm-pg-posts-preheading {
-        display: block;
-        font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
-        font-weight: var(--fw-sub-heading);
-        margin-bottom: 0.5rem;
-        padding-left: 0.3%;
-      }
-
       .project-archive-heading-wrapper {
         padding-top: 5rem;
       }
@@ -116,135 +111,6 @@ const projectPosts = await getCollection("projects");
         line-height: 1;
       }
 
-      .hm-pg-posts-container {
-        gap: 4rem;
-        padding-top: 4rem;
-        flex-wrap: wrap;
-      }
-
-      .hm-pg-single-post-container {
-        width: 47.55%;
-      }
-
-      .hm-pg-single-post-img-container {
-        margin-bottom: 1.8em;
-      }
-
-      .hm-pg-single-post-img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .hm-pg-single-post-img-2 {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-
-      .post-date-preheading {
-        color: var(--secondary-color);
-        letter-spacing: normal;
-      }
-
-      .hm-pg-single-post-title {
-        text-transform: uppercase;
-      }
-
-      .hm-pg-single-post-text-link {
-        color: var(--accent-color);
-      }
-
-      .arrow-icon:hover > .arrow-icon-line {
-        stroke: var(--primary-color);
-      }
-
-      .hm-pg-single-post-text-link:hover,
-      .hm-pg-single-post-text-link:focus {
-        color: var(--secondary-color);
-      }
-
-      .hm-pg-single-post-description {
-        color: var(--secondary-color);
-        max-width: 45ch;
-        margin-bottom: 1rem;
-      }
-
-      .hm-pg-single-post-btn {
-        display: inline-block;
-        margin-bottom: 2.5rem;
-        transition: 0.2s;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
-
-      .hm-pg-single-post-btn-text {
-        color: var(--secondary-color);
-        font-weight: var(--fw-500);
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        text-decoration: underline;
-        text-underline-offset: 0.5em;
-        text-decoration-color: var(--accent-color);
-      }
-
-      .hm-pg-single-post-btn:hover > .hm-pg-single-post-btn-text {
-        color: var(--accent-color);
-        text-decoration-color: var(--accent-color);
-      }
-
-      /* -------------hm-pg-posts @ max-width:790px------------------- */
-
-      @media (max-width: 790px) {
-        .homepage-posts .standard-container {
-          padding-inline: 0rem;
-        }
-        .hm-pg-posts-container {
-          gap: 2.5rem;
-          flex-direction: column;
-          padding-top: 0rem;
-        }
-        .project-archive-title-text-container {
-          padding-top: 5rem;
-        }
-
-        .hm-pg-single-post-container {
-          width: 100%;
-        }
-
-
-        .hm-pg-posts-cta-btn-wrapper {
-          padding-inline: 2.5rem;
-        }
-      }
-
-      .hm-pg-posts-cta-btn-wrapper {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        padding-top: 2.5rem;
-      }
-
-      @media (max-width: 768px) {
-        .hm-pg-single-post-description {
-          font-size: 1.2rem;
-          max-width: 100%;
-        }
-
-        .hm-pg-single-post-btn {
-          margin-bottom: 0rem;
-        }
-
-        .hm-pg-posts-cta-btn-wrapper {
-          justify-content: flex-start;
-        }
-
-        .hm-pg-posts-cta-btn {
-          margin-block: 0;
-        }
-      }
-
-      /* -------------------------------------projects------------------------------- */
       .project-archive-description-wrapper {
         width: 50%;
       }
@@ -259,51 +125,55 @@ const projectPosts = await getCollection("projects");
         max-width: 60ch;
       }
 
-      @media (max-width: 1262px) {
-        .hm-pg-projects-case-study-img-container {
-          align-content: stretch;
-        }
-
-        .PEP-case-study-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: right 0;
-        }
-
-        .PEP-case-study-img-2 {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: left 10;
-        }
+      .project-archive__project-loop {
+        gap: 4rem;
+        padding-top: 1rem;
+        flex-wrap: wrap;
       }
 
-      .hm-pg-preheading {
-        color: var(--accent-color);
-        letter-spacing: 0.1125rem;
+      .project-archive__single-project-container {
+        width: 47.55%;
       }
 
-      .hm-pg-projects-case-study-description {
-        color: var(--secondary-color);
-        font-family: Source Code Pro;
-        font-size: 1rem;
-        font-weight: 300;
-        max-width: 45ch;
+      .project-archive__project-img-container {
+        margin-bottom: 1.8em;
+      }
+
+      .project-archive__single-project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .single-project__tag-list{
+        display:flex;
+        flex-wrap: wrap;
+      }
+
+      .single-project__tag {
+        color: var(--primary-color);
+        letter-spacing: 0.1em;
+        font-size: 0.8rem;
         margin-bottom: 1rem;
+        font-weight: var(--fw-500);
+        display: block;
+        text-transform: uppercase;
+        margin-right:0.8em;
+        background-color:var(--secondary-color);
+        border-radius:2px;
+        padding:0.4em 0.9em;
       }
 
-      .hm-pg-projects-case-study-btn {
-        display: inline-block;
-        margin-bottom: 2.5rem;
-        transition: 0.2s;
-        letter-spacing: 0.06em;
-        white-space: nowrap;
-      }
-
-      .hm-pg-projects-case-study-btn-text {
+      .project-archive__single-project-description {
         color: var(--secondary-color);
-        font-weight: var(--fw-300);
+        max-width: 50ch;
+        margin-bottom: 1rem;
+        font-weight:var(--fw-300);
+      }
+
+      .project-archive__single-project-btn-text {
+        color: var(--secondary-color);
+        font-weight: var(--fw-500);
         text-transform: uppercase;
         font-size: 0.8rem;
         text-decoration: underline;
@@ -311,37 +181,35 @@ const projectPosts = await getCollection("projects");
         text-decoration-color: var(--accent-color);
       }
 
-      .hm-pg-projects-case-study-btn:hover
-        > .hm-pg-projects-case-study-btn-text {
+      .project-archive__single-project-btn:hover > .project-archive__single-project-btn-text {
         color: var(--accent-color);
+        text-decoration-color: var(--accent-color);
       }
 
-      /* -------------hm-pg-projects-case-studies @ max-width:790px------------------- */
+      .project-archive__project-cta-btn-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.5rem;
+      }
+
+      /* -------------Project archive media queries------------------- */
 
       @media (max-width: 790px) {
-        .hm-pg-projects-case-study-container {
-          gap: 2.5rem;
-          flex-direction: column;
+        .project-archive__single-project-container {
+          width: 100%;
+          margin-bottom:1.5rem;
         }
 
-        .hm-pg-projects-case-study-img-container {
-          width: 100%;
+        .project-archive-title-text-container {
+          padding-top: 5rem;
         }
+      }
 
-        .PEP-case-study-img {
-          width: 100%;
-          max-width: 400px;
-          aspect-ratio: 400/450;
-          object-fit: cover;
-          object-position: right 0;
-        }
 
-        .PEP-case-study-img-2 {
-          width: 100%;
-          max-width: 400px;
-          aspect-ratio: 400/450;
-          object-fit: cover;
-          object-position: left 10;
+      @media (max-width: 768px) {
+        .project-archive__project-cta-btn-wrapper {
+          justify-content: flex-start;
         }
 
         .project-archive-description-wrapper {
@@ -349,27 +217,6 @@ const projectPosts = await getCollection("projects");
         }
       }
 
-      .hm-pg-projects-cta-btn-wrapper {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        padding-top: 2.5rem;
-      }
-
-      @media (max-width: 768px) {
-        .hm-pg-projects-case-study-description {
-          font-size: 1.2rem;
-          max-width: 100%;
-        }
-
-        .hm-pg-projects-case-study-btn {
-          margin-bottom: 0rem;
-        }
-
-        .hm-pg-projects-cta-btn-wrapper {
-          justify-content: flex-start;
-        }
-      }
     </style>
   </body>
 </html>

@@ -7,7 +7,8 @@ import videoWebm from "../assets/project-images/tayo-project-video.webm";
 
 const {
   title,
-  projectDescription = "Decadent brownies made to order from our kitchen to your door!!!",
+  projectBlurb = "Decadent brownies made to order from our kitchen to your door!!!",
+  projectDescription,
   featureListTextMd1,
   featureListTextMd2,
   featureListTextMd3,
@@ -45,7 +46,7 @@ console.log(Astro.props.frontmatter);
       <div class="flex projects-hero-container">
         <div class="flex project-hero__title-box">
           <h1 class="project-hero__h1">{title}</h1>
-          <h2 class="project-hero__h2">{projectDescription}</h2>
+          <h2 class="project-hero__h2">{projectBlurb}</h2>
         </div>
         <div class="flex project-hero__feature-list-box">
           <ul class="project-hero__feature-list">

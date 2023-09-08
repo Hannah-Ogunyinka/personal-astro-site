@@ -1,8 +1,9 @@
 ---
 title: "Tayo's Mixing Bowl"
 isDraft: false
-tags: ["wordpress", "e-commerce"]
-projectDescription: "Decadent brownies made to order from our kitchen to your door"
+tags: ["Wordpress", "E-commerce"]
+projectBlurb: "Decadent brownies made to order from our kitchen to your door"
+projectDescription: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions."
 featureListTextMd1: "Strategy"
 featureListTextMd2: "Custom design"
 featureListTextMd3: "Professional photography"
