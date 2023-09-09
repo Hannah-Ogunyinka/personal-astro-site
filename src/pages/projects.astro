@@ -1,6 +1,7 @@
 ---
 import Head from "../components/head.astro";
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import circleMobile from "../assets/images/circle-mobile.svg";
@@ -83,11 +84,9 @@ const projectPosts = await getCollection("projects");
             ))
           }
         </section>
-        <div class="project-archive__project-cta-btn-wrapper flex">
-          <Button class="cta-btn-light" btnLink = "/projects/" text="Read more posts" />
-        </div>
       </div>
     </main>
+    <Footer />
     <script>
       import "../scripts/nav.js";
     </script>
@@ -129,10 +128,11 @@ const projectPosts = await getCollection("projects");
         gap: 4rem;
         padding-top: 1rem;
         flex-wrap: wrap;
+        justify-content:flex-start;
       }
 
       .project-archive__single-project-container {
-        width: 47.55%;
+        width: 45%;
       }
 
       .project-archive__project-img-container {

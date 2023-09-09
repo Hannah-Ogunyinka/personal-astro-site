@@ -1,9 +1,7 @@
 ---
 import FeatureList from "../components/feature-list.astro";
-import ProjectVideo from "../components/project-video.astro";
+import Button from "../components/Button.astro"
 import { Image } from "astro:assets";
-import pepImage from "../assets/images/pep-image.jpg";
-import videoWebm from "../assets/project-images/tayo-project-video.webm";
 
 const {
   title,
@@ -42,145 +40,147 @@ console.log(Astro.props.frontmatter);
 
 <main class="project-template__main-content">
   <section>
-    <section>
-      <div class="flex projects-hero-container">
-        <div class="flex project-hero__title-box">
-          <h1 class="project-hero__h1">{title}</h1>
-          <h2 class="project-hero__h2">{projectBlurb}</h2>
-        </div>
-        <div class="flex project-hero__feature-list-box">
-          <ul class="project-hero__feature-list">
-            <FeatureList featureListText={featureListTextMd1} />
-            <FeatureList featureListText={featureListTextMd2} />
-            <FeatureList featureListText={featureListTextMd3} />
-            <FeatureList featureListText={featureListTextMd4} />
-            <FeatureList featureListText={featureListTextMd5} />
-            <FeatureList featureListText={featureListTextMd6} />
-          </ul>
-        </div>
+    <div class="flex projects-hero-container">
+      <div class="flex project-hero__title-box">
+        <h1 class="project-hero__h1">{title}</h1>
+        <h2 class="project-hero__h2">{projectBlurb}</h2>
       </div>
-    </section>
-    <section>
-      <div class="inner-container-85rem-with-block-padding">
-        <Image
-          src={projectImage1md}
-          class="project-1st-img"
-          alt={projectImage1mdalt}
-          loading={"eager"}
-        />
+      <div class="flex project-hero__feature-list-box">
+        <ul class="project-hero__feature-list">
+          <FeatureList featureListText={featureListTextMd1} />
+          <FeatureList featureListText={featureListTextMd2} />
+          <FeatureList featureListText={featureListTextMd3} />
+          <FeatureList featureListText={featureListTextMd4} />
+          <FeatureList featureListText={featureListTextMd5} />
+          <FeatureList featureListText={featureListTextMd6} />
+        </ul>
       </div>
-    </section>
-    <section>
-      <div
-        class="flex inner-container-85rem-with-block-padding project-template-third-sec-container"
-      >
-        <div class="flex project-template-third-sec-col-lft">
-          <h2 class="project-template-third-sec__h2">{subtitle1}</h2>
-        </div>
-        <div class="flex project-template-third-sec-col-rght">
-          <p
-            class="project-template-third-sec__p"
-            style="white-space: pre-line;"
-          >
-            {description1}
-          </p>
-        </div>
+    </div>
+  </section>
+  <section>
+    <div class="inner-container-85rem-with-block-padding">
+      <Image
+        src={projectImage1md}
+        class="project-1st-img"
+        alt={projectImage1mdalt}
+        loading={"eager"}
+      />
+    </div>
+  </section>
+  <section>
+    <div
+      class="flex inner-container-85rem-with-block-padding project-template-third-sec-container"
+    >
+      <div class="flex project-template-third-sec-col-lft">
+        <h2 class="project-template-third-sec__h2">{subtitle1}</h2>
       </div>
-    </section>
-    <section>
-      <div class="inner-container-1920">
-        <img
-          src="https://pinegrow.com/placeholders/img12.jpg"
-          class="project-template-fourth-sec-img"
-          alt=""
-          width="1920"
-          height="1080"
-        />
+      <div class="flex project-template-third-sec-col-rght">
+        <p
+          class="project-template-third-sec__p"
+          style="white-space: pre-line;"
+        >
+          {description1}
+        </p>
       </div>
-    </section>
-    <section>
-      <div
-        class="flex inner-container-85rem-with-block-padding project-template-fifth-section-container"
-      >
-        <div class="flex project-template-third-sec-col-lft">
-          <h2 class="project-template-third-sec__h2">{subtitle2}</h2>
-        </div>
-        <div class="flex project-template-third-sec-col-rght">
-          <p style="white-space: pre-line;">
-            {description2}
-          </p>
-        </div>
+    </div>
+  </section>
+  <section>
+    <div class="inner-container-1920">
+      <Image
+      src={projectImage2md}
+      class="project-template-fourth-sec-img"
+      alt={projectImage2mdalt}
+    />
+    </div>
+  </section>
+  <section>
+    <div
+      class="flex inner-container-85rem-with-block-padding project-template-fifth-section-container"
+    >
+      <div class="flex project-template-third-sec-col-lft">
+        <h2 class="project-template-third-sec__h2">{subtitle2}</h2>
       </div>
-    </section>
-    <section>
-      <div
-        class="flex inner-container-85rem-with-block-padding project-template-column-gap"
-      >
+      <div class="flex project-template-third-sec-col-rght">
+        <p style="white-space: pre-line;">
+          {description2}
+        </p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="flex inner-container-85rem-with-block-padding project-template-column-gap">
         <div class="flex project-template-fifth-section-col-lft">
-          <img
-            src="https://pinegrow.com/placeholders/img13.jpg"
-            class="project-template-fifth-section-lft-img"
-          />
+          <Image
+          src={projectImage3md}
+          class="project-template-fifth-section-lft-img"
+          alt={projectImage3mdalt}
+        />
         </div>
         <div class="flex project-template-fifth-section-col-rght">
-          <img
-            src="https://pinegrow.com/placeholders/img15.jpg"
-            class="project-template-fifth-section-rt-img"
-          />
+          <Image
+          src={projectImage4md}
+          class="project-template-fifth-section-lft-img"
+          alt={projectImage4mdalt}
+        />
         </div>
+    </div>
+</section>
+  <section>
+    <div
+      class="flex inner-container-85rem-with-block-padding project-template-seventh-section-container"
+    >
+      <div class="flex project-template-third-sec-col-lft">
+        <h2 class="project-template-third-sec__h2">{subtitle3}</h2>
       </div>
-    </section>
-    <section>
-      <div
-        class="flex inner-container-85rem-with-block-padding project-template-seventh-section-container"
-      >
-        <div class="flex project-template-third-sec-col-lft">
-          <h2 class="project-template-third-sec__h2">{subtitle3}</h2>
-        </div>
-        <div class="flex project-template-third-sec-col-rght">
+      <div class="flex project-template-third-sec-col-rght">
+        <p style="white-space: pre-line;">
+          {description3}
+        </p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="inner-container-1920">
+      <Image
+      src={projectImage5md}
+      class="project-template-fourth-sec-img"
+      alt={projectImage5mdalt}
+    />
+    </div>
+  </section>
+  <section>
+    <div
+      class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container"
+    >
+      <div class="flex project-template-nineth-sec-col-lft">
+        <div>
+          <h2
+            class="project-template-nineth-sec__h2 project-template-third-sec__h2"
+          >
+            {subtitle4}
+          </h2>
           <p style="white-space: pre-line;">
-            {description3}
+            {description4}
           </p>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="inner-container-1920">
-        <img
-          src="https://pinegrow.com/placeholders/img12.jpg"
-          class="project-template-fourth-sec-img"
-        />
-      </div>
-    </section>
-    <section>
-      <div
-        class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container"
-      >
-        <div class="flex project-template-nineth-sec-col-lft">
-          <div>
-            <h2
-              class="project-template-nineth-sec__h2 project-template-third-sec__h2"
-            >
-              {subtitle4}
-            </h2>
-            <p style="white-space: pre-line;">
-              {description4}
-            </p>
-          </div>
-        </div>
 
-        <slot />
+      <slot />
 
-      </div>
-    </section>
-    <section>
-      <div class="inner-container-85rem">
-        <img
-          class="project-template-tenth-sec-img"
-          src="https://pinegrow.com/placeholders/img18.jpg"
-        />
-      </div>
-    </section>
+    </div>
+  </section>
+  <section>
+    <div class="inner-container-85rem">
+      <Image
+      src={projectImage6md}
+      class="project-template-tenth-sec-img"
+      alt={projectImage6mdalt}
+      quality={"high"}
+    />
+    </div>
+    <div class="project-archive__project-cta-btn-wrapper flex">
+      <Button class="cta-btn-light" btnLink = "/projects/" text="Read more posts" />
+    </div>
   </section>
 </main>
 <style>
