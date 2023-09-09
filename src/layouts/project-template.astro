@@ -132,7 +132,7 @@ console.log(Astro.props.frontmatter);
       class="flex inner-container-85rem-with-block-padding project-template-seventh-section-container"
     >
       <div class="flex project-template-third-sec-col-lft">
-        <h2 class="project-template-third-sec__h2">{subtitle3}</h2>
+        <h2 class="project-template-third-sec__h2" style="white-space: pre-line;">{subtitle3}</h2>
       </div>
       <div class="flex project-template-third-sec-col-rght">
         <p style="white-space: pre-line;">
@@ -151,9 +151,10 @@ console.log(Astro.props.frontmatter);
     </div>
   </section>
   <section>
+    {isImg1Visible ?
     <div
       class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container">
-      {isImg1Visible ?
+      
       <div class="flex project-template-nineth-sec-col-lft">
         <div>
           <h2
@@ -165,12 +166,13 @@ console.log(Astro.props.frontmatter);
             {description4}
           </p>
         </div>
-      </div>:
-    <div class="placeholder"></div>
-  }
+      </div>
+
       <slot />
 
-    </div>
+    </div>:
+    <div class="placeholder"></div>
+  }
   </section>
   <section>
     {isImg1Visible ?
