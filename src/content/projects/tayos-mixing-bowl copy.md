@@ -12,6 +12,16 @@ featureListTextMd5: "Custom checkout"
 featureListTextMd6: "Conditional enquiry forms"
 projectImage1md: "../../assets/project-images/tmb-founder.jpg"
 projectImage1mdalt: "founder image"
+projectImage2md: "../../assets/project-images/brownies-and-icecream.jpg"
+projectImage2mdalt: "spoon dipped in brownies and ice-cream"
+projectImage3md: "../../assets/project-images/brownies-and-icecream.jpg"
+projectImage3mdalt: "spoon dipped in brownies and ice-cream"
+projectImage4md: "../../assets/project-images/brownies-and-icecream.jpg"
+projectImage4mdalt: "spoon dipped in brownies and ice-cream"
+projectImage5md: "../../assets/project-images/brownies-and-icecream.jpg"
+projectImage5mdalt: "spoon dipped in brownies and ice-cream"
+projectImage6md: "../../assets/project-images/brownies-and-icecream.jpg"
+projectImage6mdalt: "spoon dipped in brownies and ice-cream"
 subtitle1: '"Baya Garden studio went over and beyond to create an amazing website for my online bakery business."'
 description1: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions.\n
 
