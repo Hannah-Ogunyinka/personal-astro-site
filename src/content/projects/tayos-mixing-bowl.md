@@ -1,6 +1,7 @@
 ---
 title: "Tayo's Mixing Bowl"
 isDraft: false
+isImg1Visible: true
 tags: ["Wordpress", "E-commerce"]
 projectBlurb: "Decadent brownies made to order from our kitchen to your door"
 projectDescription: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions."
@@ -22,7 +23,6 @@ projectImage5md: "../../assets/project-images/stacked-brownies.jpg"
 projectImage5mdalt: "brwonies cut into cubes"
 projectImage6md: "../../assets/project-images/Tayos-website-collective-screenshot.jpg"
 projectImage6mdalt: "spoon dipped in brownies and ice-cream"
-projectVideoUrl: "../../assets/tayo-project-video2.mp4"
 subtitle1: '"Hannah went over and beyond to create an amazing website for my online bakery business."'
 description1: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions.\n
 

@@ -5,6 +5,7 @@ const Projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       isDraft: z.boolean(),
+      isImg1Visible: z.boolean().optional(),
       title: z.string(),
       tags: z.array(z.string()),
       projectBlurb: z.string().optional(),

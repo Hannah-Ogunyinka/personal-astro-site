@@ -261,7 +261,7 @@ a {
 .project-1st-img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 2/1.1;
   object-fit: cover;
   object-position: top;
   display: block;
@@ -317,7 +317,7 @@ a {
 .project-template-fourth-sec-img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 2/1.1;
   object-fit: cover;
   object-position: center center;
 }
@@ -424,4 +424,8 @@ a {
   .project-archive__project-cta-btn-wrapper {
     justify-content: flex-start;
   }
+}
+
+.placeholder {
+  display: none;
 }

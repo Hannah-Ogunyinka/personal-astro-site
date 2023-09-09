@@ -33,7 +33,9 @@ const {
   description3,
   subtitle4,
   description4,
+  isImg1Visible,
 } = Astro.props.frontmatter;
+
 
 console.log(Astro.props.frontmatter);
 ---
@@ -150,8 +152,8 @@ console.log(Astro.props.frontmatter);
   </section>
   <section>
     <div
-      class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container"
-    >
+      class="flex inner-container-85rem-with-block-padding project-template-column-gap project-template-nineth-section-container">
+      {isImg1Visible ?
       <div class="flex project-template-nineth-sec-col-lft">
         <div>
           <h2
@@ -163,13 +165,15 @@ console.log(Astro.props.frontmatter);
             {description4}
           </p>
         </div>
-      </div>
-
+      </div>:
+    <div class="placeholder"></div>
+  }
       <slot />
 
     </div>
   </section>
   <section>
+    {isImg1Visible ?
     <div class="inner-container-85rem">
       <Image
       src={projectImage6md}
@@ -177,7 +181,9 @@ console.log(Astro.props.frontmatter);
       alt={projectImage6mdalt}
       quality={"high"}
     />
-    </div>
+    </div> :
+    <div class="placeholder"></div>
+  }
     <div class="project-archive__project-cta-btn-wrapper flex">
       <Button class="cta-btn-light" btnLink = "/projects/" text="Read more posts" />
     </div>
