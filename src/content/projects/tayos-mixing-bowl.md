@@ -37,7 +37,7 @@ description2: "During the discovery phase, Tayo expressed that she wanted her we
 She favoured a clean, modern look and emphasised that the shop area needed to be easy to use. Tayo would only be producing small batches of brownies at a time and needed a checkout area that placed a cap on how many brownie boxes could be ordered in a week.\n
 
 The website also needed enquiry forms that led each customer through a series of questions, depending on whether they were after a custom or a cake from the signature cake collection."
-subtitle3: "The Strategy and \nDesign"
+subtitle3: "The Strategy and Design"
 description3: "It was important that we showed off the high quality cakes and brownies that were on offer. After planning the initial layout of the website structure and working through the customer journey, a series of professional photoshoots were carried out with a focus on showcasing the desserts in the best light.\n
 
 Alongside, the photoshoot, we shot and edited a video of Tayo at work, showcasing the high level of skill and expertise that went into her craft.\n

@@ -282,7 +282,7 @@ a {
 }
 
 .project-template-third-sec__h2 {
-  max-width: 20ch;
+  max-width: 30ch;
   font-weight: var(--fw-sub-heading);
   letter-spacing: 0.8;
   margin-bottom: 0rem;
