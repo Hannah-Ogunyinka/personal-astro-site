@@ -4,7 +4,7 @@ import ProjectTemplate from "../../layouts/project-template.astro";
 import Head from "../../components/head.astro";
 import Header from "../../components/header.astro";
 import Footer from "../../components/footer.astro";
-import  { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const projectPosts = await getCollection("projects", ({ data }) => {
@@ -22,7 +22,6 @@ interface Props {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
-console.log(Content);
 ---
 
 <html lang="en">

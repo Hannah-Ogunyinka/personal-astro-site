@@ -7,7 +7,13 @@ import { Image } from "astro:assets";
 import circleMobile from "../assets/images/circle-mobile.svg";
 import circleDesktop from "../assets/images/circle-image__desktop.svg";
 import { getCollection} from "astro:content";
-const projectPosts = await getCollection("projects");
+
+            const marketingPosts = await getCollection("projects", ({ data }) => {
+                return data.tags.includes("Marketing");
+            });
+const allPosts = await getCollection("projects");
+const tags = [...new Set([].concat.apply([], allPosts.map(project => project.data.tags)))]
+
 
 ---
 
@@ -37,11 +43,24 @@ const projectPosts = await getCollection("projects");
             <h2 class="project-archive-description">Projects I've worked on</h2>
           </div>
         </section>
-
-        <section class="project-archive__project-container">
-              <div class="project-archive__project-loop flex">
+      <section class="flex" style ="flex-direction:row-reverse">
+        <aside style = "width:15%">
+          
+          <ul class = "single-project__tag-list flex" style="flex-direction: column;align-content: center;">
+            <li><h2 class="preheading" style="color: var(--accent-color);text-align: center;">categories</h2></li>
+            {tags.map((tag) => (
+            <li  style="flex-shrink: 1;">
+      <span class="single-project__tag">
+        {tag}
+      </span>
+            </li>
+               ))}
+          </ul>
+        </aside>
+        <div class="project-archive__project-container" style ="width:85%; margin-top:0">
+              <div class="project-archive__project-loop flex" style ="padding-top:0">
                 {
-                  projectPosts.map((project) => (
+                  allPosts.map((project) => (
                 <div class="project-archive__single-project-container">
                   <div class="project-archive__project-img-container">
                     <Image
@@ -54,7 +73,7 @@ const projectPosts = await getCollection("projects");
                     <ul class = "single-project__tag-list">
                     {project.data.tags.map((tag) => (
                     <li >
-              <span class="single-project__tag">
+              <span class="single-project__tag"  id="marketingButton">
                 {tag}
               </span>
             </li>
@@ -82,9 +101,12 @@ const projectPosts = await getCollection("projects");
               </div>
             ))
           }
-        </section>
+        </div>
+
+      </section>
       </div>
     </main>
+
     <Footer />
     <script>
       import "../scripts/nav.js";
