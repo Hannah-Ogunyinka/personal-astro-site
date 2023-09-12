@@ -34,8 +34,8 @@ ul {
   --secondary-color: #ffffff;
 
   /* font-sizes */
-  font-size: 16px;
-  --fs-1: clamp(2rem, 8vw + 1rem, 4.5rem);
+  font-size: 1.5rem;
+  --fs-1: clamp(2.4rem, 0.9rem + 3vw, 4.5rem);
 
   --fs-2: clamp(2rem, 4vw, 3rem);
 
@@ -60,7 +60,7 @@ ul {
 
 @media (max-width: 400px) {
   :root {
-    font-size: 14px;
+    font-size: 1 rem;
   }
 }
 
@@ -131,7 +131,7 @@ body {
 h1 {
   font-size: var(--fs-1);
   letter-spacing: 0.1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   display: inline-block;
 }
 

@@ -34,7 +34,7 @@ const { Content } = await post.render();
       <h1>{title}</h1>
       <ul class="single-project__tag-list">
         {
-          post.data.tags.map((tag) => (
+          tags.map((tag) => (
             <li>
               <span class="single-project__tag">{tag}</span>
             </li>
@@ -57,7 +57,7 @@ const { Content } = await post.render();
 
       .cover-image-wrapper {
         justify-content: flex-start;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
       }
       .cover-image {
         max-width: 30rem;
@@ -69,6 +69,7 @@ const { Content } = await post.render();
       .single-project__tag-list {
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 1.5rem;
       }
 
       .single-project__tag {

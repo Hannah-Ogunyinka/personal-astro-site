@@ -61,6 +61,128 @@ import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
 </header>
 
 <style>
+  /* ----------Addtional reset----------- */
+  /* Box sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Reset margins */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  figure,
+  picture,
+  body {
+    margin: 0;
+  }
+
+  /* reset ul */
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+  /* ----Custom properties ---- */
+  :root {
+    position: relative;
+    min-height: 100%;
+
+    /* Colors */
+    --primary-color: #22292d;
+    --accent-color: #e97b2c;
+    --secondary-color: #ffffff;
+
+    /* font-sizes */
+    font-size: 16px;
+    /* for main heading to scale */
+    --fs-9: clamp(2.25rem, 1.5455rem + 3.5227vw, 10rem);
+
+    /* for sub-heading to scale */
+    --fs-8: clamp(2.3rem, 8vw, 10rem);
+
+    /* hm-pg intro section */
+    --fs-7: clamp(1.8rem, 1.1455rem + 3.2727vw, 9rem);
+
+    /* body */
+    --fs-6: 1.125rem;
+
+    /* */
+    --fs-5: clamp(0.8rem, 4vw, 1.125rem);
+
+    /*  */
+    --fs-4: 1.125rem;
+
+    /* --fs-3:  */
+
+    /* font-families */
+    --ff-sans-normal: "Inter", sans-serif;
+    --ff-mono: "Source Code Pro", monospace;
+
+    /* font-weights */
+    --fw-hero-heading: 900;
+    --fw-800: 800;
+    --fw-heading: 700;
+    --fw-sub-heading: 600;
+    --fw-500: 500;
+    --fw-body-text: 400;
+    --fw-300: 300;
+  }
+
+  @media (max-width: 400px) {
+    :root {
+      font-size: 14px;
+    }
+  }
+
+  /* ------------------- */
+  /* Utility classes */
+  /* ------------------- */
+
+  .flex {
+    display: flex;
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  /* ----------------------------Global Styles---------------------------- */
+  /* ------------------------------------------------------------------- */
+
+  .standard-container {
+    padding-inline: 4rem;
+    margin-inline: auto;
+    max-width: 1920px;
+  }
+
+  .top-bottom-padding {
+    padding-block: 4rem;
+  }
+
+  @media (max-width: 1024px) {
+    .standard-container {
+      padding-inline: 2.5rem;
+    }
+
+    .top-bottom-padding {
+      padding-block: 2.5rem;
+    }
+  }
   header {
     position: fixed;
     right: 0;
@@ -167,7 +289,8 @@ import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
   }
 
   .nav-item-text {
-    color: #666a6b;
+    /* color: #5b6162; */
+    color: var(--primary-color);
   }
 
   nav ul li a:before {
@@ -333,7 +456,3 @@ import logo from "../assets/images/Hannah Ogunyinka favicon 2.svg";
     color: var(--accent-color);
   }
 </style>
-
-<!-- <script>
-  import "../scripts/nav.js";
-</script> -->
