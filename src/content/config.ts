@@ -42,14 +42,17 @@ const Projects = defineCollection({
 
 const Posts = defineCollection({
   type: "content", // v2.5.0 and later
-  schema: z.object({
-    isDraft: z.boolean(),
-    title: z.string(),
-    description: z.string(),
-    tags: z.array(z.string()),
-    sortOrder: z.number(),
-    publishDate: z.date(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      isDraft: z.boolean(),
+      title: z.string(),
+      description: z.string(),
+      tags: z.array(z.string()),
+      sortOrder: z.number(),
+      publishDate: z.date(),
+      postImage1md: image().optional(),
+      postImage1mdalt: z.string().optional(),
+    }),
 });
 
 export const collections = {

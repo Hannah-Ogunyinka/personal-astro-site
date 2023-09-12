@@ -1,0 +1,181 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture,
+body {
+  margin: 0;
+}
+
+/* reset ul */
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+/* ----Custom properties ---- */
+:root {
+  position: relative;
+  min-height: 100%;
+
+  /* Colors */
+  --primary-color: #22292d;
+  --accent-color: #f48434;
+  --secondary-color: #ffffff;
+
+  /* font-sizes */
+  font-size: 16px;
+  --fs-1: clamp(2rem, 8vw + 1rem, 4.5rem);
+
+  --fs-2: clamp(2rem, 4vw, 3rem);
+
+  /* body */
+  --fs-3: 1.125rem;
+
+  --fs-4: clamp(0.8rem, 4vw, 1.125rem);
+
+  /* font-families */
+  --ff-sans-normal: "Inter", sans-serif;
+  --ff-mono: "Source Code Pro", monospace;
+
+  /* font-weights */
+  --fw-hero-heading: 900;
+  --fw-800: 800;
+  --fw-heading: 700;
+  --fw-sub-heading: 600;
+  --fw-500: 500;
+  --fw-body-text: 400;
+  --fw-300: 300;
+}
+
+@media (max-width: 400px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--secondary-color);
+  font-size: var(--fs-4);
+  font-family: var(--ff-sans-normal);
+  font-weight: var(--fw-300);
+  max-width: 3840px;
+  color: var(--primary-color);
+}
+
+/* ------------------- */
+/* Utility classes */
+/* ------------------- */
+.remove-bullet-point {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* ----------------------------Global Styles---------------------------- */
+/* ------------------------------------------------------------------- */
+
+.inner-container-85rem-with-block-padding {
+  padding-inline: 2.5rem;
+  margin-inline: auto;
+  max-width: 85rem;
+  padding-block: 2.5rem;
+}
+
+.inner-container-85rem {
+  padding-inline: 2.5rem;
+  margin-inline: auto;
+  max-width: 55rem;
+}
+
+@media (max-width: 768px) {
+  .inner-container-with-block-padding {
+    padding-block: 2rem 4rem;
+  }
+
+  .inner-container-85rem-with-block-padding {
+    padding-block: 2rem;
+  }
+}
+
+h1 {
+  font-size: var(--fs-1);
+  letter-spacing: 0.1rem;
+  margin-bottom: 4rem;
+  display: inline-block;
+}
+
+h2 {
+  font-size: var(--fs-2);
+  letter-spacing: 0.04rem;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  font-weight: var(--fw-heading);
+}
+
+h3 {
+  font-size: clamp(2rem, 3.5vw, 5rem);
+  font-weight: var(--fw-heading);
+  line-height: normal;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 60ch;
+}
+
+p {
+  font-weight: var(--fw-body-text);
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
+.preheading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: var(--fw-sub-heading);
+  display: block;
+  text-transform: uppercase;
+}
+
+/* ------------------ Hero section ----------------------- */
+/* ----------------------------------------------------- */
+/* margin top necessary to avoid navigation blocking content */
+.project-template__main-content {
+  margin-top: 6rem;
+  max-width: 1920px;
+  margin-inline: auto;
+}

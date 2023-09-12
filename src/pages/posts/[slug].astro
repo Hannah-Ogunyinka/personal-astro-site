@@ -1,0 +1,89 @@
+---
+import "../../styles/posts.css";
+import Header from "../../components/header-white.astro";
+import Head from "../../components/head.astro";
+import Footer from "../../components/footer.astro";
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const postCollection = await getCollection("posts", ({ data }) => {
+    return !data.isDraft;
+  });
+  return postCollection.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { title, description, publishDate, tags, postImage1md, postImage1mdalt } =
+  post.data;
+const { Content } = await post.render();
+---
+
+<html lang="en">
+  <Head />
+  <body>
+    <Header />
+    <main class="inner-container-85rem">
+      <h1>{title}</h1>
+      <ul class="single-project__tag-list">
+        {
+          post.data.tags.map((tag) => (
+            <li>
+              <span class="single-project__tag">{tag}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="cover-image-wrapper flex">
+        <Image class="cover-image" src={postImage1md} alt={postImage1mdalt} />
+      </div>
+      <Content />
+    </main>
+    <Footer />
+    <script>
+      import "../../scripts/nav.js";
+    </script>
+    <style>
+      main {
+        margin-top: 6rem;
+      }
+
+      .cover-image-wrapper {
+        justify-content: flex-start;
+        margin-bottom: 4rem;
+      }
+      .cover-image {
+        max-width: 30rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .single-project__tag-list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .single-project__tag {
+        color: var(--secondary-color);
+        letter-spacing: 0.1em;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        font-weight: var(--fw-500);
+        display: block;
+        text-transform: uppercase;
+        margin-right: 0.8em;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+        padding: 0.4em 0.9em;
+      }
+    </style>
+  </body>
+</html>
