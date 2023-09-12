@@ -115,7 +115,7 @@ body {
 .inner-container-85rem {
   padding-inline: 2.5rem;
   margin-inline: auto;
-  max-width: 55rem;
+  max-width: 85rem;
 }
 
 @media (max-width: 768px) {
@@ -164,8 +164,7 @@ a {
 }
 
 .preheading {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
   font-weight: var(--fw-sub-heading);
   display: block;
   text-transform: uppercase;

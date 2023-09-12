@@ -24,27 +24,61 @@ const { post } = Astro.props;
 const { title, description, publishDate, tags, postImage1md, postImage1mdalt } =
   post.data;
 const { Content } = await post.render();
+
+const inputDate = new Date(publishDate);
+const day = inputDate.getDate();
+const monthNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const month = monthNames[inputDate.getMonth()];
+const year = inputDate.getFullYear();
+const formattedDate = `${day} ${month} ${year}`;
 ---
 
 <html lang="en">
   <Head />
   <body>
     <Header />
-    <main class="inner-container-85rem">
-      <h1>{title}</h1>
-      <ul class="single-project__tag-list">
-        {
-          tags.map((tag) => (
-            <li>
-              <span class="single-project__tag">{tag}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <div class="cover-image-wrapper flex">
-        <Image class="cover-image" src={postImage1md} alt={postImage1mdalt} />
-      </div>
-      <Content />
+    <main class="inner-container-85rem flex">
+      <aside></aside>
+      <article class="flex">
+        <div class="article-inner-wrapper">
+          <h1>{title}</h1>
+          <ul class="single-project__tag-list">
+            {
+              tags.map((tag: unknown) => (
+                <li>
+                  <span class="single-project__tag">{tag}</span>
+                </li>
+              ))
+            }
+          </ul>
+          <div class="flex">
+            <span class="preheading">published:</span>
+            <span class="post-date">{formattedDate}</span>
+          </div>
+          <div class="cover-image-wrapper flex">
+            <Image
+              class="cover-image"
+              src={postImage1md}
+              alt={postImage1mdalt}
+            />
+          </div>
+          <Content />
+        </div>
+      </article>
+      <aside></aside>
     </main>
     <Footer />
     <script>
@@ -55,9 +89,32 @@ const { Content } = await post.render();
         margin-top: 6rem;
       }
 
+      article {
+        width: 55%;
+        justify-content: center;
+      }
+
+      .article-inner-wrapper {
+        max-width: 40rem;
+      }
+
+      aside {
+        width: 22.5%;
+      }
+
+      @media (max-width: 1024px) {
+        aside {
+          display: none;
+        }
+
+        article {
+          width: 100%;
+        }
+      }
+
       .cover-image-wrapper {
         justify-content: flex-start;
-        margin-bottom: 2rem;
+        margin-block: 2rem;
       }
       .cover-image {
         max-width: 30rem;
@@ -84,6 +141,11 @@ const { Content } = await post.render();
         background-color: var(--primary-color);
         border-radius: 2px;
         padding: 0.4em 0.9em;
+      }
+      .post-date {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        text-transform: uppercase;
       }
     </style>
   </body>
