@@ -34,13 +34,13 @@ ul {
   --secondary-color: #ffffff;
 
   /* font-sizes */
-  font-size: 1.5rem;
+  font-size: 16px;
   --fs-1: clamp(2.4rem, 0.9rem + 3vw, 4.5rem);
 
   --fs-2: clamp(2rem, 4vw, 3rem);
 
   /* body */
-  --fs-3: 1.125rem;
+  --fs-3: 1.2rem;
 
   --fs-4: clamp(0.8rem, 4vw, 1.125rem);
 
@@ -60,7 +60,7 @@ ul {
 
 @media (max-width: 400px) {
   :root {
-    font-size: 1 rem;
+    font-size: 14px;
   }
 }
 
@@ -68,7 +68,7 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: var(--secondary-color);
-  font-size: var(--fs-4);
+  font-size: var(--fs-3);
   font-family: var(--ff-sans-normal);
   font-weight: var(--fw-300);
   max-width: 3840px;
