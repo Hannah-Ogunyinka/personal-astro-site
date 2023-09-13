@@ -54,7 +54,7 @@ const tags = [...new Set([].concat.apply([], allPosts.map(post => post.data.tags
                ))}
           </ul>
         </aside>
-        <div class="post-archive__post-container" style ="width:85%; margin-top:0">
+        <div class="post-archive__post-container" style ="margin-top:0">
               <div class="post-archive__post-loop flex" style ="padding-top:0">
                 {
                   allPosts.map((post) => (
@@ -111,6 +111,21 @@ const tags = [...new Set([].concat.apply([], allPosts.map(post => post.data.tags
     <style>
       /* ---------------------------------Homepage-posts-section-------------------------------- */
       /* -------------------------------------------------------------------------------------------*/
+
+      .post-archive__post-container{
+      width:85%;
+    }
+
+  @media(max-width:768px){
+    aside{
+      display:none;
+    }
+    .post-archive__post-container{
+      width:100%;
+    }
+
+  }
+
 
       .post-archive-section {
         max-width: 1920px;
