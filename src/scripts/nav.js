@@ -23,22 +23,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*---------------------Scroll down - header becomes dark-grey and logo appears------------------ */
 // Get a reference to the nav-container
-const outernavContainer = document.querySelector(".nav-outer-container");
-const logo = document.querySelector(".logo");
-const logoText = document.querySelector(".logo-text");
+document.addEventListener("DOMContentLoaded", () => {
+  const outernavContainer = document.querySelector(".nav-outer-container");
+  const logo = document.querySelector(".logo");
+  const logoText = document.querySelector(".logo-text");
+
+  // Listen for scroll events
+  window.addEventListener("scroll", () => {
+    // Check if the user has scrolled beyond a certain threshold (e.g., 50 pixels)
+    if (window.scrollY > 50) {
+      // Add the 'scrolled' class to apply the dark background
+      outernavContainer.classList.add("scrolled");
+      logo.classList.add("scrolled");
+      logoText.classList.add("scrolled");
+    } else {
+      // Remove the 'scrolled' class to make the background transparent
+      outernavContainer.classList.remove("scrolled");
+      logo.classList.remove("scrolled");
+      logoText.classList.remove("scrolled");
+    }
+  });
+});
+
+const navItemTexts = document.querySelectorAll(".nav-item-text");
 
 // Listen for scroll events
 window.addEventListener("scroll", () => {
   // Check if the user has scrolled beyond a certain threshold (e.g., 50 pixels)
-  if (window.scrollY > 50) {
-    // Add the 'scrolled' class to apply the dark background
-    outernavContainer.classList.add("scrolled");
-    logo.classList.add("scrolled");
-    logoText.classList.add("scrolled");
-  } else {
-    // Remove the 'scrolled' class to make the background transparent
-    outernavContainer.classList.remove("scrolled");
-    logo.classList.remove("scrolled");
-    logoText.classList.remove("scrolled");
-  }
+  const scrolled = window.scrollY > 50;
+
+  // Use forEach to apply or remove the "scrolled" class for each element
+  navItemTexts.forEach((navItemText) => {
+    if (scrolled) {
+      navItemText.classList.add("scrolled");
+    } else {
+      navItemText.classList.remove("scrolled");
+    }
+  });
 });

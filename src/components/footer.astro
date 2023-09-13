@@ -1,9 +1,11 @@
 ---
+const { name = "Hannah Ogunyinka" } = Astro.props;
 ---
 
 <footer>
   <p>
-    &copy<span class="footer-currentyear" id="currentYear">2027</span> Hannah Ogunyinka
+    &copy<span class="footer-currentyear" id="currentYear">2027</span>
+    {name}
   </p>
 </footer>
 

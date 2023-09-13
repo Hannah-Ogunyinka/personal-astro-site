@@ -2,7 +2,6 @@
 import "../../styles/posts.css";
 import Header from "../../components/header-white.astro";
 import Head from "../../components/head.astro";
-import Footer from "../../components/footer.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 
@@ -23,6 +22,7 @@ interface Props {
 const { post } = Astro.props;
 const { title, description, publishDate, tags, postImage1md, postImage1mdalt } =
   post.data;
+const postImage = postImage1md as ImageMetadata;
 const { Content } = await post.render();
 
 const inputDate = new Date(publishDate);
@@ -69,42 +69,43 @@ const formattedDate = `${day} ${month} ${year}`;
             <span class="post-date">{formattedDate}</span>
           </div>
           <div class="cover-image-wrapper flex">
-            <Image
-              class="cover-image"
-              src={postImage1md}
-              alt={postImage1mdalt}
-            />
+            <Image class="cover-image" src={postImage} alt={postImage1mdalt} />
           </div>
           <Content />
         </div>
       </article>
-      <aside></aside>
+      <aside>
+        <!-- <TableOfContents headings={headings} /> -->
+      </aside>
     </main>
-    <Footer />
-    <script>
-      import "../../scripts/nav.js";
-    </script>
+    <footer>
+      <p>
+        &copy<span class="footer-currentyear" id="currentYear">2027</span>
+         Hannah Ogunyinka
+      </p>
+    </footer>
+
     <style>
       main {
         margin-top: 6rem;
       }
 
       article {
-        width: 55%;
+        width: 60%;
         justify-content: center;
       }
 
-      .article-inner-wrapper {
-        max-width: 40rem;
-      }
-
       aside {
-        width: 22.5%;
+        width: 20%;
       }
 
       @media (max-width: 1024px) {
         aside {
           display: none;
+        }
+
+        .article-inner-wrapper {
+          max-width: 40rem;
         }
 
         article {
@@ -147,6 +148,26 @@ const formattedDate = `${day} ${month} ${year}`;
         font-size: 1rem;
         text-transform: uppercase;
       }
+
+      footer {
+        background-color: var(--primary-color);
+      }
+
+      footer p {
+        padding: 1rem;
+        text-align: center;
+        color: var(--secondary-color);
+        font-weight: var(--fw-300);
+        margin-bottom: 0;
+      }
+
+      .footer-currentyear {
+        color: var(--accent-color);
+      }
     </style>
+    <script>
+      import "../../scripts/nav.js";
+      import "../../scripts/footer";
+    </script>
   </body>
 </html>
