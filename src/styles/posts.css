@@ -104,6 +104,25 @@ body {
 
 /* ----------------------------Global Styles---------------------------- */
 /* ------------------------------------------------------------------- */
+.standard-container {
+  padding-inline: 4rem;
+  margin-inline: auto;
+  max-width: 1920px;
+}
+
+.top-bottom-padding {
+  padding-block: 4rem;
+}
+
+@media (max-width: 1024px) {
+  .standard-container {
+    padding-inline: 2.5rem;
+  }
+
+  .top-bottom-padding {
+    padding-block: 2.5rem;
+  }
+}
 
 .inner-container-85rem-with-block-padding {
   padding-inline: 2.5rem;

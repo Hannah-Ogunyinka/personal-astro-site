@@ -1,5 +1,5 @@
 ---
-title: "Crafting Cohesion: The Key Elements of Designing a Frontend Design System"
+title: "Crafting Cohesion: Designing a Frontend Design System"
 isDraft: false
 publishDate: 2023-09-12
 description: "In today's rapidly evolving digital landscape, frontend design systems have become indispensable for creating cohesive and efficient user interfaces. A well-designed frontend design system not only enhances the user experience but also streamlines the development process."

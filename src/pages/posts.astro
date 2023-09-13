@@ -1,15 +1,247 @@
 ---
-import "../styles/global.css";
-import Header from "../components/header.astro";
 import Head from "../components/head.astro";
+import Header from "../components/header-white.astro";
+import Footer from "../components/footer.astro";
+import "../styles/posts.css";
+import { Image } from "astro:assets";
+import circleMobile from "../assets/images/circle-mobile.svg";
+import circleDesktop from "../assets/images/circle-image__desktop.svg";
+import { getCollection} from "astro:content";
+
+const marketingPosts = await getCollection("posts", ({ data }) => {
+return data.tags.includes("Marketing");
+});
+const allPosts = await getCollection("posts");
+const tags = [...new Set([].concat.apply([], allPosts.map(post => post.data.tags)))]
+
+
 ---
 
 <html lang="en">
   <Head />
   <body>
     <Header />
+    <main class="post-archive-section">
+      <div class="standard-container">
+        <section class="post-archive-heading-wrapper">
+          <h1 class="post-archive__heading">Posts</h1>
+          <picture>
+            <source
+              media="(max-width:768px)"
+              srcset={circleMobile.src}
+              width="13px"
+              height="13px"
+            />
+            <img
+              src={circleDesktop.src}
+              alt="full stop punctuation"
+              width="32px"
+              height="24px"
+            />
+          </picture>
+        </section>
+      <section class="flex" style ="flex-direction:row-reverse">
+        <aside style = "width:15%">
+          
+          <ul class = "single-post__tag-list flex" style="flex-direction: column;align-content: center;">
+            <li><h2 class="preheading" style="color: var(--accent-color);text-align: center;">categories</h2></li>
+            {tags.map((tag) => (
+            <li  style="flex-shrink: 1;">
+      <span class="single-post__tag">
+        {tag}
+      </span>
+            </li>
+               ))}
+          </ul>
+        </aside>
+        <div class="post-archive__post-container" style ="width:85%; margin-top:0">
+              <div class="post-archive__post-loop flex" style ="padding-top:0">
+                {
+                  allPosts.map((post) => (
+                <div class="post-archive__single-post-container">
+                  <div class="post-archive__post-img-container">
+                    <Image
+                      src={post.data.postImage1md}
+                      alt="post-img"
+                      class="post-archive__single-post-img"
+                    />
+                  </div>
+                  <div class="post-archive__single-post-text-container">
+                    <ul class = "single-post__tag-list gap">
+                    {post.data.tags.map((tag) => (
+                    <li >
+              <span class="single-post__tag"  id="marketingButton">
+                {tag}
+              </span>
+            </li>
+          ))}
+        </ul>
+                    <a href={`/posts/${post.slug}`} class="post-archive__single-post-text-link">
+                      <h3 class="post-archive__single-post-title">
+                        {post.data.title}
+                      </h3>
+                    </a>
+                    <p class="post-archive__single-post-description">
+                      {post.data.postDescription}
+                    </p>
+                    <a
+                      href={`/posts/${post.slug}`}
+                      class="post-archive__single-post-btn"
+                      aria-controls="read more btn"
+                    >
+                      <span class="sr-only post-archive__single-post-btn-text">
+                        Read More
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+      </section>
+      </div>
+    </main>
+
+    <Footer />
     <script>
       import "../scripts/nav.js";
     </script>
+    <style>
+      /* ---------------------------------Homepage-posts-section-------------------------------- */
+      /* -------------------------------------------------------------------------------------------*/
+
+      .post-archive-section {
+        max-width: 1920px;
+        margin-inline: auto;
+        padding-bottom:4rem;
+      }
+
+      .post-archive-heading-wrapper {
+        padding-top: 9rem;
+      }
+      .post-archive__heading {
+        text-transform: uppercase;
+        color: var(--primary-color);
+        font-size: var(--fs-8);
+        margin-bottom: 1rem;
+        line-height: 1;
+      }
+
+
+      .post-archive__post-loop {
+        gap: 4rem;
+        padding-top: 1rem;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+      }
+
+      .post-archive__single-post-container {
+        width: 45%;
+      }
+
+      .post-archive__post-img-container {
+        margin-bottom: 1.8em;
+      }
+
+      .post-archive__single-post-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .single-post__tag-list{
+        display:flex;
+        flex-wrap: wrap;
+
+      }
+      .gap {
+        gap:1rem;
+      }
+
+
+      .single-post__tag {
+        color: var(--secondary-color);
+        letter-spacing: 0.1em;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+        font-weight: var(--fw-500);
+        display: block;
+        text-transform: uppercase;
+        background-color:var(--primary-color);
+        border-radius:2px;
+        padding:0.4em 0.9em;
+      }
+
+      .post-archive__single-post-title{
+        font-size:1.8rem;
+        text-transform: uppercase;
+        margin-bottom:1rem;
+        color:var(--primary-color);
+      }
+
+      .post-archive__single-post-title:hover{
+        color:var(--accent-color);
+      }
+
+      .post-archive__single-post-description {
+        color: var(--secondary-color);
+        max-width: 50ch;
+        margin-bottom: 1rem;
+        font-weight:var(--fw-300);
+      }
+
+      .post-archive__single-post-btn-text {
+        color: var(--primary-color);
+        font-weight: var(--fw-500);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        text-decoration: underline 0.1em;
+        text-underline-offset: 0.3em;
+        text-decoration-color: var(--primary-color);
+      }
+
+      .post-archive__single-post-btn:hover > .post-archive__single-post-btn-text {
+        color: var(--accent-color);
+        text-decoration-color: var(--accent-color);
+      }
+
+      .post-archive__post-cta-btn-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2.5rem;
+      }
+
+      /* -------------post archive media queries------------------- */
+
+      @media (max-width: 790px) {
+        .post-archive__single-post-container {
+          width: 100%;
+          margin-bottom:1.5rem;
+        }
+
+        .post-archive-title-text-container {
+          padding-top: 5rem;
+        }
+      }
+
+
+      @media (max-width: 768px) {
+        .post-archive__post-cta-btn-wrapper {
+          justify-content: flex-start;
+        }
+
+        .post-archive-description-wrapper {
+          width: 100%;
+        }
+
+        .post-archive-section {
+        padding-bottom:2rem;
+      }
+      }
+
+    </style>
   </body>
 </html>
