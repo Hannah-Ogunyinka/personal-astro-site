@@ -4,6 +4,7 @@ import Header from "../../components/header-white.astro";
 import Head from "../../components/head.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
+import Footer from "../../components/footer.astro";
 
 export async function getStaticPaths() {
   const postCollection = await getCollection("posts", ({ data }) => {
@@ -55,21 +56,18 @@ const formattedDate = `${day} ${month} ${year}`;
       <article class="flex">
         <div class="article-inner-wrapper">
           <h1>{title}</h1>
-          <ul class="single-project__tag-list">
+          <ul class="single-post__tag-list">
             {
               tags.map((tag: unknown) => (
                 <li>
-                  <span class="single-project__tag">{tag}</span>
+                  <span class="single-post__tag">{tag}</span>
                 </li>
               ))
             }
           </ul>
-          <div class="flex">
+          <div class="post-date-wrapper flex">
             <span class="preheading">published:</span>
-            <span class="post-date">{formattedDate}</span>
-          </div>
-          <div class="cover-image-wrapper flex">
-            <Image class="cover-image" src={postImage} alt={postImage1mdalt} />
+            <span class="post-date-number">{formattedDate}</span>
           </div>
           <Content />
         </div>
@@ -78,16 +76,10 @@ const formattedDate = `${day} ${month} ${year}`;
         <!-- <TableOfContents headings={headings} /> -->
       </aside>
     </main>
-    <footer>
-      <p>
-        &copy<span class="footer-currentyear" id="currentYear">2027</span>
-         Hannah Ogunyinka
-      </p>
-    </footer>
-
+    <Footer />
     <style>
       main {
-        margin-top: 6rem;
+        margin-top: 10rem;
       }
 
       article {
@@ -113,24 +105,13 @@ const formattedDate = `${day} ${month} ${year}`;
         }
       }
 
-      .cover-image-wrapper {
-        justify-content: flex-start;
-        margin-block: 2rem;
-      }
-      .cover-image {
-        max-width: 30rem;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .single-project__tag-list {
+      .single-post__tag-list {
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 1.5rem;
       }
 
-      .single-project__tag {
+      .single-post__tag {
         color: var(--secondary-color);
         letter-spacing: 0.1em;
         font-size: 0.8rem;
@@ -143,7 +124,12 @@ const formattedDate = `${day} ${month} ${year}`;
         border-radius: 2px;
         padding: 0.4em 0.9em;
       }
-      .post-date {
+
+      .post-date-wrapper {
+        margin-bottom: 2rem;
+      }
+
+      .post-date-number {
         margin-left: 0.5rem;
         font-size: 1rem;
         text-transform: uppercase;
@@ -167,7 +153,6 @@ const formattedDate = `${day} ${month} ${year}`;
     </style>
     <script>
       import "../../scripts/nav.js";
-      import "../../scripts/footer";
     </script>
   </body>
 </html>
