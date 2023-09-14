@@ -17,7 +17,6 @@ export default defineConfig({
       langs: [],
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
-      padding: "2rem",
     },
   },
 });

@@ -1,7 +1,10 @@
 ---
 import "../../styles/posts.css";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "astro-breadcrumbs/breadcrumbs.css";
 import Header from "../../components/header-white.astro";
 import Head from "../../components/head.astro";
+import Button from "../../components/Button.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import Footer from "../../components/footer.astro";
@@ -55,6 +58,23 @@ const formattedDate = `${day} ${month} ${year}`;
       <aside></aside>
       <article class="flex">
         <div class="article-inner-wrapper">
+          <div class="breadcrumb-wrapper">
+            <Breadcrumbs>
+              <svg
+                slot="separator"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </Breadcrumbs>
+          </div>
           <h1>{title}</h1>
           <ul class="single-post__tag-list">
             {
@@ -70,16 +90,22 @@ const formattedDate = `${day} ${month} ${year}`;
             <span class="post-date-number">{formattedDate}</span>
           </div>
           <Content />
+          <Button
+            text="see more posts"
+            class="cta-btn-light"
+            btnLink="/posts/"
+          />
         </div>
       </article>
       <aside>
         <!-- <TableOfContents headings={headings} /> -->
       </aside>
     </main>
+
     <Footer />
     <style>
       main {
-        margin-top: 10rem;
+        margin-top: 4rem;
       }
 
       article {
@@ -89,6 +115,10 @@ const formattedDate = `${day} ${month} ${year}`;
 
       aside {
         width: 20%;
+      }
+
+      .breadcrumb-wrapper {
+        padding-block: 2em;
       }
 
       @media (max-width: 1024px) {
@@ -114,7 +144,7 @@ const formattedDate = `${day} ${month} ${year}`;
       .single-post__tag {
         color: var(--secondary-color);
         letter-spacing: 0.1em;
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
         font-weight: var(--fw-500);
         display: block;
@@ -133,6 +163,7 @@ const formattedDate = `${day} ${month} ${year}`;
         margin-left: 0.5rem;
         font-size: 1rem;
         text-transform: uppercase;
+        font-weight: var(--fw-500);
       }
 
       footer {

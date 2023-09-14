@@ -17,16 +17,10 @@ const {
   .cta-btn {
     display: inline-block;
     margin-block: 2.5rem;
-    transition: 0.2s;
+    transition: ease 0.2s;
     padding: 1em 1.5em;
     letter-spacing: 0.06em;
     white-space: nowrap;
-  }
-
-  .cta-btn:hover,
-  .cta-btn:focus {
-    border-radius: 2rem;
-    color: var(--accent-color);
   }
 
   .cta-btn-dark {
@@ -34,9 +28,23 @@ const {
     color: var(--secondary-color);
   }
 
+  .cta-btn-dark:hover,
+  .cta-btn-dark:focus {
+    border-radius: 2rem;
+    color: var(--accent-color);
+    background-color: var(--primary-color);
+  }
+
   .cta-btn-light {
     border: solid 3px var(--primary-color);
     color: var(--primary-color);
     background-color: var(--secondary-color);
+  }
+
+  .cta-btn-light:hover,
+  .cta-btn-light:focus {
+    border-radius: 2rem;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
   }
 </style>
