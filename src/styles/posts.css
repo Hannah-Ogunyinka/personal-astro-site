@@ -44,6 +44,21 @@ ul {
 
   --fs-4: clamp(0.8rem, 4vw, 1.125rem);
 
+  /* for main heading to scale */
+  --fs-9: clamp(2.25rem, 1.5455rem + 3.5227vw, 10rem);
+
+  /* for sub-heading to scale */
+  --fs-8: clamp(4rem, 2.8rem + 6vw, 10rem);
+
+  /* hm-pg intro section */
+  --fs-7: clamp(1.8rem, 1.1455rem + 3.2727vw, 9rem);
+
+  /* body */
+  --fs-6: 1.125rem;
+
+  /* */
+  --fs-5: clamp(0.8rem, 4vw, 1.125rem);
+
   /* font-families */
   --ff-sans-normal: "Inter", sans-serif;
   --ff-mono: "Source Code Pro", monospace;
@@ -149,7 +164,6 @@ body {
 
 h1 {
   font-size: var(--fs-1);
-  letter-spacing: 0.1rem;
   margin-bottom: 2.5rem;
   display: inline-block;
 }

@@ -1,5 +1,5 @@
 ---
-const pageTitle = "Hannah Ogunyinka";
+const { pageTitle = "Hannah Ogunyinka" } = Astro.props;
 ---
 
 <head>
@@ -20,7 +20,9 @@ const pageTitle = "Hannah Ogunyinka";
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
     media="print"
-    onload="this.media='all'"
+    onload="
+    this.media = 'all'
+"
   />
   <noscript>
     <link

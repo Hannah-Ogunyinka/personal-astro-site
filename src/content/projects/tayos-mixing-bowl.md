@@ -56,7 +56,6 @@ I had lengthy discussions with Hannah about my company’s vision, product, imag
 Hannah is very thorough in her work and I felt that she addressed any concerns I had and came up with solutions that I was happy with. I would definitely recommend Baya Garden Studios to business owners/ start ups that need a website or want to revamp their website.”"
 ---
 
-<div class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container" >
 <video
         autoplay
         loop
@@ -67,6 +66,6 @@ Hannah is very thorough in her work and I felt that she addressed any concerns I
         height="100%"
       >
 Your browser does not support the video tag.
-<source src="../../public/tayo-project-video2.mp4" type="video/mp4" />
+
+<source src="../../tayo-project-video2.mp4" type="video/mp4" />
 </video>
-</div>
