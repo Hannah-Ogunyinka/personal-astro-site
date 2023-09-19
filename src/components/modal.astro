@@ -15,7 +15,7 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
     position: absolute;
     top:-0.5em;
     right: 4.2em;
-    width:230px;
+    width:0px;
     transform: translate(19em);
     opacity: 0;
     visibility: hidden;
@@ -46,6 +46,7 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
   transition: transform ease 1s,
   transition;: opacity: ease 1s;
   transition-delay: 0.5s;
+  width:230px;
   opacity: 1;
   visibility: inherit;
 }

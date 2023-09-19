@@ -270,6 +270,7 @@ a {
 /* ---------------- section three------------------------------ */
 .third-section {
   position: relative;
+  overflow-x: clip;
 }
 
 .project-template-third-sec-container {
