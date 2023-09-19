@@ -62,7 +62,7 @@ const tags = [...new Set([].concat.apply([], allPosts.map(post => post.data.tags
                   <div class="post-archive__post-img-container">
                     <Image
                       src={post.data.postImage1md}
-                      alt="post-img"
+                      alt={post.data.postImage1mdalt}
                       class="post-archive__single-post-img"
                     />
                   </div>

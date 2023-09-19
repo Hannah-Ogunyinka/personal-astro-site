@@ -10,8 +10,10 @@ import circleDesktop from "../assets/images/circle-image__desktop.svg";
 import studioPortrait1440 from "../assets/images/Extended up studio portrait hair fix-1440.jpg";
 import pepImage from "../assets/images/pep-image.jpg";
 import tayosImage from "../assets/images/DSCF1530.jpg";
-import postImage1 from "../assets/images/posts img 1.jpg";
-import postImage2 from "../assets/images/posts img 2.jpg";
+
+import { formatDate } from "../scripts/utils";
+import { getCollection } from "astro:content";
+const postCollection = await getCollection("posts");
 ---
 
 <html lang="en">
@@ -178,66 +180,74 @@ import postImage2 from "../assets/images/posts img 2.jpg";
           </picture>
         </div>
         <div class="hm-pg-posts-container flex">
-          <div class="hm-pg-single-post-container">
-            <div class="hm-pg-single-post-img-container">
-              <Image
-                src={postImage1}
-                alt="single-post-img"
-                class="hm-pg-single-post-img"
-              />
-            </div>
-            <div class="hm-pg-single-post-text-container">
-              <span class="post-date-preheading preheading">17 june 2023</span>
-              <a href="" class="hm-pg-single-post-text-link">
-                <h3 class="hm-pg-single-post-title">
-                  post title <span class="arrow-icon-wrapper">
-                    <svg
-                      class="arrow-icon"
-                      width="0.8em"
-                      height="0.8em"
-                      viewBox="0 0 33 33"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        class="arrow-icon-line"
-                        d="M3.74854 26.85L31.4382 2.2627"
-                        stroke="#E97B2C"
-                        stroke-width="4"
-                        stroke-linejoin="round"></path>
-                      <path
-                        class="arrow-icon-line"
-                        d="M30.1096 2.76834L1 2.81201"
-                        stroke="#E97B2C"
-                        stroke-width="4"
-                        stroke-linejoin="round"></path>
-                      <path
-                        class="arrow-icon-line"
-                        d="M30.7679 3.75467L30.7185 31"
-                        stroke="#E97B2C"
-                        stroke-width="4"
-                        stroke-linejoin="round"></path>
-                    </svg>
+          {
+            postCollection.map((post) => (
+              <div class="hm-pg-single-post-container">
+                <div class="hm-pg-single-post-img-container">
+                  <Image
+                    src={post.data.postImage1md}
+                    alt={post.data.postImage1mdalt}
+                    class="hm-pg-single-post-img"
+                  />
+                </div>
+                <div class="hm-pg-single-post-text-container">
+                  <span class="post-date-preheading preheading">
+                    {formatDate(post.data.publishDate)}
                   </span>
-                </h3>
-              </a>
-
-              <p class="hm-pg-single-post-description">
-                Platinum Events Planning are an award winning wedding planning
-                company that deliver unique and memorable occasions for their
-                clients.
-              </p>
-              <a
-                href=""
-                class="hm-pg-single-post-btn"
-                aria-controls="read more btn"
-                ><span class="sr-only hm-pg-single-post-btn-text"
-                  >Read More</span
-                ></a
-              >
-            </div>
-          </div>
-          <div class="hm-pg-single-post-container">
+                  <a
+                    href={`/posts/${post.slug}`}
+                    class="hm-pg-single-post-text-link"
+                  >
+                    <h3 class="hm-pg-single-post-title">
+                      {post.data.title}
+                      <span class="arrow-icon-wrapper">
+                        <svg
+                          class="arrow-icon"
+                          width="0.8em"
+                          height="0.8em"
+                          viewBox="0 0 33 33"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="arrow-icon-line"
+                            d="M3.74854 26.85L31.4382 2.2627"
+                            stroke="#E97B2C"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="arrow-icon-line"
+                            d="M30.1096 2.76834L1 2.81201"
+                            stroke="#E97B2C"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            class="arrow-icon-line"
+                            d="M30.7679 3.75467L30.7185 31"
+                            stroke="#E97B2C"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </h3>
+                  </a>
+                  <a
+                    href=""
+                    class="hm-pg-single-post-btn"
+                    aria-controls="read more btn"
+                  >
+                    <span class="sr-only hm-pg-single-post-btn-text">
+                      Read More
+                    </span>
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+          <!-- <div class="hm-pg-single-post-container">
             <div class="hm-pg-single-post-img-container">
               <Image
                 src={postImage2}
@@ -246,7 +256,7 @@ import postImage2 from "../assets/images/posts img 2.jpg";
               />
             </div>
             <div class="hm-pg-single-post-text-container">
-              <span class="post-date-preheading preheading">17 june 2023</span>
+              <span class="post-date-preheading preheading">17 June 2023</span>
               <a href="" class="hm-pg-single-post-text-link">
                 <h3 class="hm-pg-single-post-title">
                   post title <span class="arrow-icon-wrapper">
@@ -295,7 +305,7 @@ import postImage2 from "../assets/images/posts img 2.jpg";
                 ></a
               >
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="hm-pg-posts-cta-btn-wrapper flex">
           <Button class="cta-btn-light" text="Read more posts" />
@@ -713,10 +723,15 @@ import postImage2 from "../assets/images/posts img 2.jpg";
 
       .hm-pg-single-post-title {
         text-transform: uppercase;
+        font-size: 1.8rem;
       }
 
       .hm-pg-single-post-text-link {
         color: var(--primary-color);
+      }
+
+      .arrow-icon {
+        margin-left: 0.3em;
       }
 
       .arrow-icon:hover > .arrow-icon-line {
