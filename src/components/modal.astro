@@ -1,0 +1,64 @@
+---
+const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props;
+---
+
+<!-- Modal Container -->
+<div id="hyperlink-modal" class="hyperlink-modal">
+  <div class="hyperlink-modal-content flex">
+    <a href={modalLink} target="_blank" >{modalText}</a>
+  </div>
+</div>
+
+<style>
+  /* CSS for the modal */
+  .hyperlink-modal {
+    position: absolute;
+    top:-0.5em;
+    right: 4.2em;
+    width:230px;
+    transform: translate(19em);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .hyperlink-modal-content {
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #fff;
+    font-weight: var(--fw-500);
+    padding: 1em 0.8em;
+    border-radius: 4px;
+    border-top: solid var(--accent-color) 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+  }
+
+  .hyperlink-modal-content a{
+    color: var(--primary-color);
+  }
+
+
+  /* CSS to slide in the modal when it's open */
+  .hyperlink-modal.active {
+
+  transform: translate(0em);
+  transition: transform ease 1s,
+  transition;: opacity: ease 1s;
+  transition-delay: 0.5s;
+  opacity: 1;
+  visibility: inherit;
+}
+  }
+
+  /* CSS to make it responsive */
+  @media (max-width: 768px) {
+    .hyperlink-modal-content {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  import "../scripts/modal.js";
+</script>

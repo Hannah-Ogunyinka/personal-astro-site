@@ -16,6 +16,8 @@ const Projects = defineCollection({
       featureListTextMd4: z.string().optional(),
       featureListTextMd5: z.string().optional(),
       featureListTextMd6: z.string().optional(),
+      modalLinkmd: z.string().optional(),
+      modalTextmd: z.string().optional(),
       projectImage1md: image().optional(),
       projectImage1mdalt: z.string().optional(),
       projectImage2md: image().optional(),

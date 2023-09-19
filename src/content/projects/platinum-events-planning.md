@@ -18,6 +18,8 @@ projectImage4md: "../../assets/project-images/PEP-Portfolio.png"
 projectImage4mdalt: "Platinum-events-planning portflio page"
 projectImage5md: "../../assets/project-images/PEP-testimonial.jpg"
 projectImage5mdalt: "spoon dipped in brownies and ice-cream"
+modalLinkmd: "https://platinumeventsplanning.com/"
+modalTextmd: "Check out the website"
 subtitle1: 'The Company'
 description1: "Platinum Events Planning are an award winning wedding planning company that deliver unique and memorable occasions for their clients. Although crafting an unforgettable experience can be overwhelming, Platinum Events Planning is run by a personable husband and wife couple who understand first hand the challenges that could arise:\n
 
