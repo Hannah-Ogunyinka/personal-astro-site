@@ -147,7 +147,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(2rem, 3.5vw, 5rem);
+  /* font-size: clamp(2rem, 3.5vw, 5rem); */
   font-weight: var(--fw-heading);
   line-height: normal;
   margin-bottom: 2rem;
