@@ -313,7 +313,7 @@ a {
 @media (max-width: 768px) {
   .project-template-third-sec-container {
     flex-direction: column;
-    padding-block: 0rem;
+    padding-block: 7em 0em;
   }
 
   .project-template-third-sec-col-lft {
