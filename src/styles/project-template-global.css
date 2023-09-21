@@ -274,7 +274,8 @@ a {
 }
 
 .project-template-third-sec-container {
-  padding-block: 5rem;
+  padding-top: 6.5rem;
+  padding-bottom: 5rem;
 }
 .project-template-third-sec-col-lft {
   width: 55%;
