@@ -44,6 +44,21 @@ ul {
 
   --fs-4: clamp(0.8rem, 4vw, 1.125rem);
 
+  /* for main heading to scale */
+  --fs-9: clamp(2.25rem, 1.5455rem + 3.5227vw, 10rem);
+
+  /* for sub-heading to scale */
+  --fs-8: clamp(3rem, 1.5999999999999999rem + 7.000000000000001vw, 10rem);
+
+  /* hm-pg intro section */
+  --fs-7: clamp(1.8rem, 1.1455rem + 3.2727vw, 9rem);
+
+  /* body */
+  --fs-6: 1.125rem;
+
+  /* */
+  --fs-5: clamp(0.8rem, 4vw, 1.125rem);
+
   /* font-families */
   --ff-sans-normal: "Inter", sans-serif;
   --ff-mono: "Source Code Pro", monospace;
@@ -271,6 +286,7 @@ a {
 .third-section {
   position: relative;
   overflow-x: clip;
+  z-index: -1;
 }
 
 .project-template-third-sec-container {

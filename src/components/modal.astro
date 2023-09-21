@@ -10,7 +10,6 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
 </div>
 
 <style>
-  /* CSS for the modal */
   .hyperlink-modal {
     position: absolute;
     top:0;
@@ -19,6 +18,13 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
     transform: translate(19em);
     opacity: 0;
     visibility: hidden;
+  }
+
+  @media (max-width:768px){
+    .hyperlink-modal{
+      right: 50%;
+      transform: translateX(300%);
+    }
   }
 
   .hyperlink-modal-content {
@@ -32,6 +38,12 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
     border-top: solid var(--accent-color) 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .hyperlink-modal-content {
+      width: 100%;
+    }
   }
 
   .hyperlink-modal-content a{
@@ -50,14 +62,16 @@ const {modalLink = "/index/", modalText = "Check out the website"} = Astro.props
   opacity: 1;
   visibility: inherit;
 }
-  }
 
-  /* CSS to make it responsive */
-  @media (max-width: 768px) {
-    .hyperlink-modal-content {
-      width: 100%;
+@media (max-width:768px){
+    .hyperlink-modal.active{
+      right: 50%;
+      transform: translateX(50%);
     }
   }
+  }
+
+
 </style>
 
 <script>
