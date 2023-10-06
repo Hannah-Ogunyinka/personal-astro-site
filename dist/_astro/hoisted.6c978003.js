@@ -1,0 +1,1 @@
+import"./hoisted.f3a3c0db.js";function o(){document.getElementById("hyperlink-modal").classList.add("active")}const e=document.querySelector(".project-template-third-sec-container"),t=new IntersectionObserver(n=>{n[0].isIntersecting&&(o(),t.unobserve(e))});t.observe(e);
