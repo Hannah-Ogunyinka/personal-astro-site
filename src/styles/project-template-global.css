@@ -25,7 +25,6 @@ ul {
 }
 /* ----Custom properties ---- */
 :root {
-  position: relative;
   min-height: 100%;
 
   /* Colors */
