@@ -62,16 +62,18 @@ const formattedDate = `${day} ${month} ${year}`;
             <Breadcrumbs>
               <svg
                 slot="separator"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
+                width="30"
+                height="10"
+                viewBox="0 0 11 13"
                 fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><polyline points="9 18 15 12 9 6"></polyline>
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="5"
+                  cy="5"
+                  r="5"
+                  transform="matrix(1 0 0 -1 0.711914 10.9123)"
+                  fill="#E97B2C"></circle>
               </svg>
             </Breadcrumbs>
           </div>
@@ -79,16 +81,18 @@ const formattedDate = `${day} ${month} ${year}`;
           <ul class="single-post__tag-list">
             {
               tags.map((tag: unknown) => (
-                <li>
+                <li class="single-post__tag-list-item">
                   <span class="single-post__tag">{tag}</span>
                 </li>
               ))
             }
           </ul>
+          <hr />
           <div class="post-date-wrapper flex">
             <span class="preheading">published:</span>
             <span class="post-date-number">{formattedDate}</span>
           </div>
+          <hr />
           <Content />
           <Button
             text="See more posts"
@@ -142,7 +146,7 @@ const formattedDate = `${day} ${month} ${year}`;
       .single-post__tag-list {
         display: flex;
         flex-wrap: wrap;
-        margin-bottom: 1.5rem;
+        /* margin-bottom: 1.5rem; */
       }
 
       .single-post__tag {
@@ -160,7 +164,7 @@ const formattedDate = `${day} ${month} ${year}`;
       }
 
       .post-date-wrapper {
-        margin-bottom: 2rem;
+        margin-block: 2rem;
       }
 
       .post-date-number {
@@ -189,5 +193,5 @@ const formattedDate = `${day} ${month} ${year}`;
     <script>
       import "../../scripts/nav.js";
     </script>
-  </body>
-</html>
+  </body></html
+>

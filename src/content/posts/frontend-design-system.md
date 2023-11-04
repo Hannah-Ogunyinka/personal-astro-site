@@ -5,8 +5,8 @@ publishDate: 2023-09-12
 description: "In today's rapidly evolving digital landscape, frontend design systems have become indispensable for creating cohesive and efficient user interfaces. A well-designed frontend design system not only enhances the user experience but also streamlines the development process."
 sortOrder: 1
 tags: ["web design", "web development"]
-postImage1md: "../../assets/images/posts img 1.jpg"
-postImage1mdalt: "geometric shapes"
+postImage1md: "../../assets/post-images/wireframes.jpg"
+postImage1mdalt: "designer looking over wireframes"
 ---
 
 In today's rapidly evolving digital landscape, frontend design systems have become indispensable for creating cohesive and efficient user interfaces. A well-designed frontend design system not only enhances the user experience but also streamlines the development process. To achieve these goals, designers and developers must understand and implement the core elements of frontend design systems. In this article, we will explore the most important elements that make up a successful frontend design system.

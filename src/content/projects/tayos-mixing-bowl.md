@@ -25,6 +25,7 @@ projectImage5md: "../../assets/project-images/stacked-brownies.jpg"
 projectImage5mdalt: "brwonies cut into cubes"
 projectImage6md: "../../assets/project-images/Tayos-website-collective-screenshot.jpg"
 projectImage6mdalt: "spoon dipped in brownies and ice-cream"
+projectVideomd: "../../tayo-project-video-rf20-trim.mp4"
 subtitle1: '"Hannah went over and beyond to create an amazing website for my online bakery business."'
 description1: "Tayo’s Mixing Bowl is a custom handmade brownies and cakes business creating high-end treats for special occasions.\n
 
@@ -57,17 +58,3 @@ I had lengthy discussions with Hannah about my company’s vision, product, imag
 
 Hannah is very thorough in her work and I felt that she addressed any concerns I had and came up with solutions that I was happy with. I would definitely recommend Baya Garden Studios to business owners/ start ups that need a website or want to revamp their website.”"
 ---
-
-<video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="project-template-nineth-sec-video"
-        width="100%"
-        height="100%"
-      >
-Your browser does not support the video tag.
-
-<source src="../../tayo-project-video2.mp4" type="video/mp4" />
-</video>

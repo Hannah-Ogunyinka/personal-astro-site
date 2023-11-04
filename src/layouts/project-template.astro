@@ -3,6 +3,7 @@ import FeatureList from "../components/feature-list.astro";
 import Button from "../components/Button.astro"
 import { Image } from "astro:assets";
 import Modal from "../components/modal.astro";
+import ProjectVideo from "../components/project-video.astro";
 
 const {
   title,
@@ -36,6 +37,7 @@ const {
   description3,
   subtitle4,
   description4,
+  projectVideomd,
   isImg1Visible,
 } = Astro.props.frontmatter;
 ---
@@ -171,8 +173,7 @@ const {
           </p>
         </div>
       </div>
-      <div class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container" ></div>
-      <slot />
+      <div class="flex project-template-nineth-sec-col-rght project-template-nineth-section-video-container" ><ProjectVideo videoUrl= {projectVideomd}/></div>
     </div>
     </div>:
     <div class="placeholder"></div>

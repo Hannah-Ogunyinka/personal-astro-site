@@ -5,7 +5,7 @@ publishDate: 2023-09-12
 description: "In today's rapidly evolving digital landscape, frontend design systems have become indispensable for creating cohesive and efficient user interfaces. A well-designed frontend design system not only enhances the user experience but also streamlines the development process."
 sortOrder: 2
 tags: ["web design", "web development"]
-postImage1md: "../../assets/images/posts img 2.jpg"
+postImage1md: "../../assets/post-images/pattern-oranges.jpg"
 postImage1mdalt: "geometric shapes"
 ---
 
